@@ -1,0 +1,7 @@
+#renderCanvas {
+    position: relative;
+    width: 100%;
+    height: calc(100% - var(--nav-size));
+    margin-top: var(--nav-size);
+    touch-action: none;
+}

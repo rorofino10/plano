@@ -1,0 +1,30 @@
+<nav class="navbar">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <div id="title-item"><span id="title-item-text">rorofino10/proyecto_viewer</span></div>
+            <a href="#" class="icon-button"><img class="icon-img" src="./assets/spliticon.png" alt="spliticon"></a>
+            <a href="#" class="icon-button"><img class="icon-img" src="./assets/configicon.png" alt="configicon" (click)="toggleDropdown()">
+                <nav *ngIf="open == true" id="config-dropdown-menu">
+                    <ul class="menu-ul">
+                        <li class="menu-list-item">
+                            <a href="#" class="menu-item">
+                                <span class="icon-button"><img class="icon-img" src="./assets/darkmode.png" alt="darkmode"></span>
+                                <span class="menu-item-text">Light Mode</span>
+                                <span class="icon-button"><img class="icon-img" src="./assets/darkmode.png" alt="darkmode"></span>
+                                <span class="menu-item-text">Dark Mode</span>
+                            </a>
+                            <a href="#" class="menu-item">
+                                <span class="icon-button"><img class="icon-img" src="./assets/darkmode.png" alt="darkmode"></span>
+                                <span class="menu-item-text">Source Code</span>
+                            </a>
+                            <a href="#" class="menu-item">
+                                <span class="icon-button"><img class="icon-img" src="./assets/darkmode.png" alt="darkmode"></span>
+                                <span class="menu-item-text">Save Workspace As</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </a>
+        </li>
+    </ul>
+</nav>
