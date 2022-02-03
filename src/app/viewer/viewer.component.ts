@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as BabylonViewer from '@babylonjs/viewer';
 
 @Component({
   selector: 'app-viewer',
