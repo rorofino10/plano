@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/planos_viewer'),
+      dir: require('path').join(__dirname, './coverage/plano'),
       subdir: '.',
       reporters: [
         { type: 'html' },
