@@ -1,7 +1,110 @@
-#renderCanvas {
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.canvas-container {
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 100%;
-    height: calc(100% - var(--nav-size));
-    margin-top: var(--nav-size);
+    height: 100%;
+}
+.renderCanvas {
+    width: 100%;
+    height: 100%;
     touch-action: none;
+    position: absolute;
+}
+.icon-toolbox{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.icon-toolbox-button {
+    width: 70px;
+    height: 50px;
+    background-color: var(--bg);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    /* border: 2px solid var(--bg-accent); */
+    border-bottom: 0;
+    margin-top: auto;
+}
+.icon-toolbox-button:hover {
+    filter: brightness(1.2);
+}
+
+.toolbox {
+    display: flex;
+    position: fixed;
+    bottom: 70px;
+    justify-content: center;
+    align-items: center;
+
+    
+    background: #242526;
+    border: 3px solid var(--bg-accent);
+    border-radius: 50px;
+}
+.camerabutton {
+	border: none;
+	font: inherit;
+	cursor: pointer;
+    text-align: center;
+
+    color: white;
+
+    border-radius: 30px;
+
+    margin: 5px;
+    padding: 5px;
+    background-color: var(--bg);
+    position: relative;
+
+}
+
+.camerabutton:hover {
+    filter: brightness(1.2);
+}
+
+.camerabutton:active {
+    filter: brightness(0.8);
+}
+
+.zoom {
+    display: flex;
+    position: fixed;
+    top: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.zoombutton {
+	font: inherit;
+	cursor: pointer;
+    text-align: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    margin: 5px;
+    position: relative;
+}
+
+.zoombutton:hover {
+    filter: brightness(1.2);
+}
+
+.zoombutton:active {
+    filter: brightness(0.8);
 }

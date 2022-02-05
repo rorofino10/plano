@@ -94,7 +94,7 @@ a {
   list-style-type: none;
   background-color: var(--bg);
   padding: 0 1rem;
-  border-bottom: var(--border);
+  /* border-bottom: var(--border); */
 }
 .menu-list-item {
   display: flex;

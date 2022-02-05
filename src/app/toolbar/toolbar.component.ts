@@ -10,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class ToolbarComponent{
 
   public open: boolean = false;
+  public themetoggle: boolean = true;
 
   toggleDropdown() {
-    this.open = !this.open;
+    // this.open = !this.open;
+  }
+
+  toggleTheme() {
+    this.themetoggle = !this.themetoggle;
   }
 
 }

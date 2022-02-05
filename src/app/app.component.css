@@ -1,0 +1,17 @@
+.grid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: var(--nav-size) calc(100% - var(--nav-size));
+    grid-template-areas:
+    "s1"
+    "s2";
+}
+
+.s1 {
+    grid-area: s1;
+}
+
+.s2 {
+    grid-area: s2;
+}

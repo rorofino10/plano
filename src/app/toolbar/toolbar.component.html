@@ -1,18 +1,21 @@
 <nav class="navbar">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <div id="title-item"><span id="title-item-text">rorofino10/proyecto_viewer</span></div>
+            <div id="title-item"><span id="title-item-text">Planta/planos</span></div>
             <a href="#" class="icon-button"><img class="icon-img" src="./assets/spliticon.png" alt="spliticon"></a>
-            <a href="#" class="icon-button"><img class="icon-img" src="./assets/configicon.png" alt="configicon" (click)="toggleDropdown()">
+            <a href="#" class="icon-button" (click)="toggleDropdown()"><img class="icon-img" src="./assets/configicon.png" alt="configicon" >
                 <nav *ngIf="open == true" id="config-dropdown-menu">
                     <ul class="menu-ul">
                         <li class="menu-list-item">
-                            <a href="#" class="menu-item">
+                            <a href="#" class="menu-item" (click)="toggleTheme()" *ngIf="themetoggle == false">
                                 <span class="icon-button"><img class="icon-img" src="./assets/darkmode.png" alt="darkmode"></span>
                                 <span class="menu-item-text">Light Mode</span>
+                            </a>
+                            <a href="#" class="menu-item" (click)="toggleTheme()" *ngIf="themetoggle == true">
                                 <span class="icon-button"><img class="icon-img" src="./assets/darkmode.png" alt="darkmode"></span>
                                 <span class="menu-item-text">Dark Mode</span>
                             </a>
+                            
                             <a href="#" class="menu-item">
                                 <span class="icon-button"><img class="icon-img" src="./assets/darkmode.png" alt="darkmode"></span>
                                 <span class="menu-item-text">Source Code</span>
