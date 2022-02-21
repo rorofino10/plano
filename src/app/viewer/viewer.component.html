@@ -1,31 +1,127 @@
 <div class="canvas-container">
     <canvas #renderCanvas class="renderCanvas"></canvas>
-    <div class="icon-toolbox">
-        <button class="icon-toolbox-button" (click)="toggleToolbox()">
-            <svg width="50" height="34" viewBox="0 0 50 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="19" y="15.071" width="10" height="26.7058" rx="5" transform="rotate(-45 19 15.071)" fill="#C4C4C4"/>
-                <rect x="25.8839" y="8" width="10" height="26.7058" rx="5" transform="rotate(45 25.8839 8)" fill="#C4C4C4"/>
+    <div *ngIf="this.selectedMesh" class="camerabar">
+        <div class="gizmoButton" class="moveGizmo">
+            <a href="#" (click)="moveGizmo()">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="50" height="50" rx="25" fill="#484A4D" />
+                    <rect x="22" y="29.1962" width="6" height="17.3761" rx="3" transform="rotate(-60 22 29.1962)"
+                        fill="#C4C4C4" fill-opacity="0.9" />
+                    <rect x="22" y="6" width="6" height="23" rx="3" fill="#C4C4C4" fill-opacity="0.8" />
+                    <path
+                        d="M13.5981 38.1158C12.1632 38.9442 10.3284 38.4526 9.5 37.0177V37.0177C8.67157 35.5828 9.1632 33.7481 10.5981 32.9196L23.4493 25.5C24.8841 24.6716 26.7189 25.1632 27.5473 26.5981V26.5981C28.3758 28.0329 27.8841 29.8677 26.4493 30.6961L13.5981 38.1158Z"
+                        fill="#C4C4C4" />
                 </svg>
-        </button>
+            </a>
+            <a href="#">
+                <input type="number" [(ngModel)]="this.selectedMeshpositionx" #ctrl="ngModel"
+                    (ngModelChange)="updateMeshPosition()">
+            </a>
+            <a href="#">
+                <input type="number" [(ngModel)]="this.selectedMeshpositiony" #ctrl="ngModel"
+                    (ngModelChange)="updateMeshPosition()">
+            </a>
+            <a href="#">
+                <input type="number" [(ngModel)]="this.selectedMeshpositionz" #ctrl="ngModel"
+                    (ngModelChange)="updateMeshPosition()">
+            </a>
+        </div>
+        <!-- <div class="gizmoButton" class="rotateGizmo">
+            <a href="#" (click)="rotateGizmo()">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="50" height="50" rx="25" fill="#484A4D" />
+                    <rect x="22" y="29.1962" width="6" height="17.3761" rx="3" transform="rotate(-60 22 29.1962)"
+                        fill="#C4C4C4" fill-opacity="0.9" />
+                    <rect x="22" y="6" width="6" height="23" rx="3" fill="#C4C4C4" fill-opacity="0.8" />
+                    <path
+                        d="M13.5981 38.1158C12.1632 38.9442 10.3284 38.4526 9.5 37.0177V37.0177C8.67157 35.5828 9.1632 33.7481 10.5981 32.9196L23.4493 25.5C24.8841 24.6716 26.7189 25.1632 27.5473 26.5981V26.5981C28.3758 28.0329 27.8841 29.8677 26.4493 30.6961L13.5981 38.1158Z"
+                        fill="#C4C4C4" />0
+                </svg>
+            </a>
+            <a href="#">
+                <input type="number" [(ngModel)]="this.selectedMeshrotatex" #ctrl="ngModel"
+                    (ngModelChange)="updateMeshPosition()">
+            </a>
+            <a href="#">
+                <input type="number" [(ngModel)]="this.selectedMeshrotatey" #ctrl="ngModel"
+                    (ngModelChange)="updateMeshPosition()">
+            </a>
+            <a href="#">
+                <input type="number" [(ngModel)]="this.selectedMeshrotatez" #ctrl="ngModel"
+                    (ngModelChange)="updateMeshPosition()">
+            </a>
+        </div> -->
+        <div class="gizmoButton" class="scaleGizmo">
+            <a href="#" (click)="scaleGizmo()">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="50" height="50" rx="25" fill="#484A4D" />
+                    <rect x="22" y="29.1962" width="6" height="17.3761" rx="3" transform="rotate(-60 22 29.1962)"
+                        fill="#C4C4C4" fill-opacity="0.9" />
+                    <rect x="22" y="6" width="6" height="23" rx="3" fill="#C4C4C4" fill-opacity="0.8" />
+                    <path
+                        d="M13.5981 38.1158C12.1632 38.9442 10.3284 38.4526 9.5 37.0177V37.0177C8.67157 35.5828 9.1632 33.7481 10.5981 32.9196L23.4493 25.5C24.8841 24.6716 26.7189 25.1632 27.5473 26.5981V26.5981C28.3758 28.0329 27.8841 29.8677 26.4493 30.6961L13.5981 38.1158Z"
+                        fill="#C4C4C4" />
+                </svg>
+            </a>
+            <a href="#">
+                <input type="number" [(ngModel)]="this.selectedMeshscalex" #ctrl="ngModel"
+                    (ngModelChange)="updateMeshPosition()">
+            </a>
+            <a href="#">
+                <input type="number" [(ngModel)]="this.selectedMeshscaley" #ctrl="ngModel"
+                    (ngModelChange)="updateMeshPosition()">
+            </a>
+            <a href="#">
+                <input type="number" [(ngModel)]="this.selectedMeshscalez" #ctrl="ngModel"
+                    (ngModelChange)="updateMeshPosition()">
+            </a>
+        </div>
     </div>
-    <div *ngIf="open == true" class="toolbox">
-        <button class="camerabutton" (click)="setDefaultView()">Default View</button>
-        <button class="camerabutton" (click)="resetCameraRotation()">Reset Camera Rotation</button>
-        <button class="camerabutton" (click)="toggleWireframe()">Wireframe</button>
+    <div class="toolbar">
+        <div class="toolbar-i">
+            <a href="#" (click)="setDefaultView()">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="50" height="50" rx="25" fill="#484A4D" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M43 18.8333C43 18.1667 42.36 17.6867 41.72 17.8733L31.72 20.79C31.2933 20.9144 31 21.3056 31 21.75V29.1869C31 29.6605 31.3323 30.0692 31.796 30.1658L41.796 32.2492C42.417 32.3785 43 31.9045 43 31.2702V18.8333ZM42 20.3185C42 19.6563 41.368 19.177 40.7304 19.3555L32.7304 21.5955C32.2985 21.7164 32 22.11 32 22.5585V28.1802C32 28.6569 32.3365 29.0673 32.8039 29.1608L40.8039 30.7608C41.4227 30.8845 42 30.4112 42 29.7802V20.3185Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M32 15C32 12.7909 30.2091 11 28 11H11C8.79086 11 7 12.7909 7 15V34C7 36.2091 8.79086 38 11 38H28C30.2091 38 32 36.2091 32 34V15ZM31.2857 16C31.2857 13.7909 29.4948 12 27.2857 12H11.7143C9.50515 12 7.71429 13.7909 7.71429 16V33C7.71429 35.2091 9.50515 37 11.7143 37H27.2857C29.4949 37 31.2857 35.2091 31.2857 33V16Z"
+                        fill="white" />
+                </svg>
+            </a>
+            <a href="#" (click)="toggleWireframe()">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="50" height="50" rx="25" fill="#484A4D" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8 7H33.2258V20.5094C38.2896 21.9305 42 26.55 42 32.0294C42 38.6406 36.5985 44 29.9355 44C24.8201 44 20.4484 40.8412 18.6934 36.3824H8V7ZM19.8803 36.3824C21.5728 40.2258 25.438 42.9118 29.9354 42.9118C35.9928 42.9118 40.9032 38.0396 40.9032 32.0294C40.9032 27.1567 37.6755 23.032 33.2258 21.6453V36.3824H19.8803ZM32.129 21.3648V35.2941H19.4698C19.1436 34.2635 18.9677 33.1668 18.9677 32.0294C18.9677 26.0193 23.8781 21.1471 29.9354 21.1471C30.6867 21.1471 31.4203 21.222 32.129 21.3648ZM32.129 20.2562C31.4177 20.1266 30.6846 20.0588 29.9355 20.0588C23.2724 20.0588 17.8709 25.4182 17.8709 32.0294C17.8709 33.1612 18.0293 34.2563 18.3251 35.2941H9.09677V8.08823H32.129V20.2562Z"
+                        fill="white" />
+                </svg>
+            </a>
+            <a href="#" (click)="zoomIn()">
+                <svg class="zoomsvg" width="50px" height="50px">
+                    <rect width="50" height="50" rx="25" fill="#484a4d" />
+                    <rect x="22" y="6" width="6" height="38" rx="3" fill="white" />
+                    <rect x="6" y="28" width="6" height="38" rx="3" transform="rotate(-90 6 28)" fill="white" />
+                </svg>
+            </a>
+            <a href="#" (click)="zoomOut()">
+                <svg class="zoomsvg" width="50px" height="50px">
+                    <rect width="50" height="50" rx="25" fill="#484a4d" />
+                    <rect x="6" y="28" width="6" height="38" rx="3" transform="rotate(-90 6 28)" fill="white" />
+                </svg>
+            </a>
+        </div>
     </div>
-    <div class="zoom">
-        <button class="zoombutton" (click)="zoomIn()">
-            <svg class="zoomsvg" width="50px" height="50px">
-                <rect width="50" height="50" rx="25" fill="#484a4d"/>
-                <rect x="22" y="6" width="6" height="38" rx="3" fill="white"/>
-                <rect x="6" y="28" width="6" height="38" rx="3" transform="rotate(-90 6 28)" fill="white"/>
-            </svg>
-        </button>
-        <button class="zoombutton" (click)="zoomOut()">
-            <svg class="zoomsvg" width="50px" height="50px">
-                <rect width="50" height="50" rx="25" fill="#484a4d"/>
-                <rect x="6" y="28" width="6" height="38" rx="3" transform="rotate(-90 6 28)" fill="white"/>
-            </svg>        
-        </button>
+
+    <div *ngIf="this.selectedMesh == null" class="assetbar">
+        <div class="assetbar-i">
+            <a href="#" (click)="addExtintor()">
+                <img src="./assets/extintor.png" alt="extintorpng">
+            </a>
+            <a href="#" (click)="addAxe()">
+                <img src="./assets/axe.png" alt="axepng">
+            </a>
+        </div>
     </div>
 </div>
