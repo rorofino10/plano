@@ -1,6 +1,7 @@
 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="50" height="50" rx="25" fill="#484A4D"/>
-<rect x="21.0837" y="25.8475" width="6" height="17.3761" rx="3" transform="rotate(-60 21.0837 25.8475)" fill="#C4C4C4" fill-opacity="0.9"/>
-<rect x="22" y="3" width="6" height="23" rx="3" fill="#C4C4C4" fill-opacity="0.8"/>
-<path d="M13.885 35.0678C12.4501 35.8962 10.6153 35.4046 9.7869 33.9697V33.9697C8.95847 32.5349 9.45009 30.7001 10.885 29.8717L23.7362 22.452C25.171 21.6236 27.0058 22.1152 27.8342 23.5501V23.5501C28.6627 24.985 28.171 26.8197 26.7362 27.6482L13.885 35.0678Z" fill="#C4C4C4"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.8578 11.929L15.9289 7.00003L11 11.929H20.8578Z" fill="#C4C4C4"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M37 42.8579L41.929 37.9289L37 33V42.8579Z" fill="#C4C4C4"/>
+<rect x="14" y="10" width="4" height="30" rx="2" fill="#C4C4C4"/>
+<path d="M16 40C14.8954 40 14 39.1046 14 38V38C14 36.8954 14.8954 36 16 36H37C38.1046 36 39 36.8954 39 38V38C39 39.1046 38.1046 40 37 40H16Z" fill="#C4C4C4"/>
 </svg>
