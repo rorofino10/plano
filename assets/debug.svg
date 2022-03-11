@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 13.229166 13.229167"
+   version="1.1"
+   id="svg2589"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="debug.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2591"
+     pagecolor="#8200ff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     width="50px"
+     inkscape:zoom="12.80212"
+     inkscape:cx="25.113028"
+     inkscape:cy="25.113028"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2586" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect2888"
+       style="fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:0.152388"
+       d="M 4.1343955,4.0664531 13.114682,5.7801946 9.341969,13.142978 0.11807821,11.266394 Z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="rect2888-0"
+       style="fill:#ffffff;fill-opacity:0;stroke:#ffffff;stroke-width:0.152388"
+       d="M 4.1336249,2.0758036 13.113911,3.7895451 9.3411984,11.152329 0.11730761,9.275746 Z"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       id="path5478"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 4.1336249,0.08515385 13.113911,1.7988954 9.3411984,9.1616793 0.11730761,7.2850963 Z"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+</svg>
