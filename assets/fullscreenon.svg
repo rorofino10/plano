@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20"
+   height="20"
+   viewBox="0 0 5.2916664 5.2916666"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="fullscreenon.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#91ffff"
+     bordercolor="#000000"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="11.313709"
+     inkscape:cx="30.759144"
+     inkscape:cy="27.75394"
+     inkscape:window-width="1037"
+     inkscape:window-height="1008"
+     inkscape:window-x="867"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     showguides="false"
+     width="20px" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.09939085,0.09939085)">
+    <path
+       id="rect1908"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.0787959;stroke-opacity:0"
+       d="M 0.77601392,-0.05974071 V 0.77601392 H -0.05974071 V 0.95619488 H 0.96291348 V -0.05729757 H 4.090122 v 1.01349245 h 1.0621515 v -1.01593559 z m 3.48614528,0.001018 H 5.151052 V 0.77479235 H 4.2621592 Z M -0.05974071,4.1459068 V 4.3163153 H 0.77601392 V 5.1522735 H 0.96291348 V 4.1459068 Z m 4.14986271,0 V 5.1522735 H 5.1522735 V 4.1459068 Z M 4.253201,4.3177405 H 5.1508483 V 5.1508483 H 4.253201 Z" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     transform="translate(0.09939085,0.09939085)" />
+</svg>
