@@ -20,6 +20,7 @@ input {
     size: 20pt;
     color: green;
     margin: 0px;
+    text-align: center;
 }
 .canvas-container {
     display: flex;
@@ -38,19 +39,41 @@ input {
 
 .camerabar {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    right: 0px;
-    border-top: 1px solid var(--bg-accent);
-    position: absolute;
-    z-index: 1;
+    right: 1rem;
+    justify-content: space-between;
     background-color: #242526;
-    height: 100%;
-    transition: 0.3s;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    padding: 1.875rem 1rem;
+    border-radius: 5rem;
+}
+
+.camerabar-mid{
+    height: 5rem;
 }
 .camerabar a{
-    padding: 8px 8px 8px 8px;
+    /* padding: 0px 8px 8px 8px; */
     text-decoration: none;
-    font-size: 25px;
+    font-size: 1.563rem;
+    color: white;
+    display: block;
+}
+
+.gizmo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.gizmo a{
+    padding: 0.5rem 0 0 0;
+    text-decoration: none;
+    font-size: 1.563rem;
     color: white;
     display: block;
 }
@@ -81,23 +104,6 @@ input {
     display: block;
 }
 
-.assetbar {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid var(--bg-accent);
-    position: absolute;
-    z-index: 1;
-    right: 0px;
-    background-color: #242526;
-    height: 100%;
-}
-.assetbar a{
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-}
 
 .toolbar a:hover {
     filter: brightness(1.2);
@@ -107,7 +113,7 @@ input {
     filter: brightness(0.8);
 }
 
-.toolbox {
+/* .toolbox {
     display:flex;
     justify-content:center;
     align-items:center;
@@ -117,7 +123,7 @@ input {
     background: #242526;
     border: 3px solid var(--bg-accent);
     border-radius: 50px;
-}
+} */
 .camerabutton {
 	border: none;
 	font: inherit;
@@ -126,10 +132,10 @@ input {
 
     color: white;
 
-    border-radius: 30px;
+    border-radius: 1.875rem;
 
-    margin: 5px;
-    padding: 5px;
+    margin: 0.313rem;
+    padding: 0.313rem;
     background-color: var(--bg);
     position: relative;
 
@@ -159,7 +165,7 @@ input {
     justify-content: center;
 
     border-radius: 50%;
-    margin: 5px;
+    margin: 0.313rem;
     position: relative;
 }
 
@@ -169,4 +175,83 @@ input {
 
 .zoombutton:active {
     filter: brightness(0.8);
+}
+
+
+.toolbox {
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    z-index: 1;
+    width: calc(100% - 2rem);
+    margin: 1rem 0 0.5rem 1rem;
+}
+
+.toolbox a{
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+    text-decoration: none;
+    font-size: 1.563rem;
+    color: white;
+    display: inline-block;
+}
+
+.toolbox a:hover{
+    filter: brightness(0.9);
+}
+.toolbox a:active{
+    filter: brightness(0.5);
+}
+
+.custombox {
+    display: flex;
+    position: fixed;
+    top: var(--nav-size);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    z-index: 1;
+    width: 100vw;
+}
+
+.custombox a{
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+    text-decoration: none;
+    font-size: 1.563rem;
+    color: white;
+    display: inline-block;
+}
+
+.custombox a:hover{
+    filter: brightness(0.9);
+}
+.custombox a:active{
+    filter: brightness(0.5);
+}
+
+.assetbar {
+    left: 50%;
+    bottom: 5rem;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #242526;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 1.25rem;
+    padding: 1.875rem 0;
+}
+.assetbar a{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
 }

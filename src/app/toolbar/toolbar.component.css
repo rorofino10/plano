@@ -122,3 +122,37 @@ a {
     
     color: #FFFFFF;
 }
+
+.bar {
+  height: var(--nav-size);
+  width: 100vw;
+
+  background-color: var(--bg);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bar-item {
+  background-color: var(--bg-accent);
+  border-radius: 50px;
+}
+
+.bar-item a {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: inline-block;
+}
+
+.bar-item a:hover{
+  filter: brightness(0.9);
+}
+.bar-item a:active{
+  filter: brightness(0.4);
+}

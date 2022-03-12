@@ -17,7 +17,7 @@ import { ViewerComponent } from './viewer/viewer.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ToolbarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
