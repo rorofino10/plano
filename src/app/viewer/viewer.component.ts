@@ -99,10 +99,9 @@ export class ViewerComponent implements OnInit {
         this.selectedMeshrotatey = this.selectedMesh.rotation.y.toFixed(2)
         this.selectedMeshrotatez = this.selectedMesh.rotation.z.toFixed(2)
 
-        this.selectedMeshscale = this.selectedMesh.scaling.z.toFixed(2) * 100
-        this.selectedMeshscale = this.selectedMesh.scaling.z.toFixed(2) * 100
-        this.selectedMeshscale = this.selectedMesh.scaling.x.toFixed(2) * 100
-        this.selectedMeshscale = this.selectedMesh.scaling.y.toFixed(2) * 100
+        this.selectedMeshscale = Math.abs(this.selectedMesh.scaling.z.toFixed(2) * 100) 
+        this.selectedMeshscale = Math.abs(this.selectedMesh.scaling.x.toFixed(2) * 100)
+        this.selectedMeshscale = Math.abs(this.selectedMesh.scaling.y.toFixed(2) * 100)
 
       }
     })
@@ -193,7 +192,7 @@ export class ViewerComponent implements OnInit {
   addCamera() {
     this.camera = new ArcRotateCamera("CameraX", 0, 0, 25, new Vector3(0, 0, 0), this.scene)
     this.camera.attachControl(this.renderCanvas.nativeElement, true)
-    this.camera.wheelPrecision = 5
+    this.camera.wheelPrecision = 50
     this.camera.lowerRadiusLimit = 1.1
     this.camera.upperRadiusLimit = 200
     // this.camera.panningSensibility = 1950
