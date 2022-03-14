@@ -13,62 +13,62 @@
       {"title": "CC2_2020"},
       {"label": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75)",
         "svg": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75).svg",  
-        "gltf": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75).gltf"
+        "gltf": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75)"
       },
       {"label": "CC2 (EP CABLES) CO EFAISA pepa",
         "svg": "CC2 (EP CABLES) CO EFAISA pepagltf.svg",  
-        "gltf": "CC2 (EP CABLES) CO EFAISA pepagltf.gltf"  
+        "gltf": "CC2 (EP CABLES) CO EFAISA pepagltf"  
       },
       {"label": "CC2 (Sala CCM & PLC) CO EFAISA pepa",
         "svg": "CC2 (Sala CCM & PLC) CO EFAISA pepa.svg",  
-        "gltf": "CC2 (Sala CCM & PLC) CO EFAISA pepa.gltf"  
+        "gltf": "CC2 (Sala CCM & PLC) CO EFAISA pepa"  
       },
       {"label": "CC2 (Sala Hidráulica) CO EFIASA pepa",
         "svg": "CC2 (Sala Hidráulica) CO EFIASA pepa.svg",  
-        "gltf": "CC2 (Sala Hidráulica) CO EFIASA pepa.gltf"  
+        "gltf": "CC2 (Sala Hidráulica) CO EFIASA pepa"  
       },
       {"label": "CC2 Cabina de Comandos C.O.EFAISA PEPA",
         "svg": "CC2 Cabina de Comandos C.O.EFAISA PEPA.svg",  
-        "gltf": "CC2 Cabina de Comandos C.O.EFAISA PEPA.gltf"  
+        "gltf": "CC2 Cabina de Comandos C.O.EFAISA PEPA"  
       },
       {"label": "CC2-Sala PLC CO EFIASA pepa",
         "svg": "CC2-Sala PLC CO EFIASA pepa.svg",  
-        "gltf": "CC2-Sala PLC CO EFIASA pepa.gltf"  
+        "gltf": "CC2-Sala PLC CO EFIASA pepa"  
       },
       {"label": "CC2-Taller GMB CO EFAISA",
         "svg": "CC2-Taller GMB CO EFAISA.svg",  
-        "gltf": "CC2-Taller GMB CO EFAISA.gltf"  
+        "gltf": "CC2-Taller GMB CO EFAISA"  
       }
   ],
   "CC3_2020": [
       {"title": "CC3_2020"},
       {"label": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75)",
         "svg": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75).svg",  
-        "gltf": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75).gltf"
+        "gltf": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75)"
       },
       {"label": "CC2 (EP CABLES) CO EFAISA pepa",
         "svg": "CC2 (EP CABLES) CO EFAISA pepagltf.svg",  
-        "gltf": "CC2 (EP CABLES) CO EFAISA pepagltf.gltf"  
+        "gltf": "CC2 (EP CABLES) CO EFAISA pepagltf"  
       },
       {"label": "CC2 (Sala CCM & PLC) CO EFAISA pepa",
         "svg": "CC2 (Sala CCM & PLC) CO EFAISA pepa.svg",  
-        "gltf": "CC2 (Sala CCM & PLC) CO EFAISA pepa.gltf"  
+        "gltf": "CC2 (Sala CCM & PLC) CO EFAISA pepa"  
       },
       {"label": "CC2 (Sala Hidráulica) CO EFIASA pepa",
         "svg": "CC2 (Sala Hidráulica) CO EFIASA pepa.svg",  
-        "gltf": "CC2 (Sala Hidráulica) CO EFIASA pepa.gltf"  
+        "gltf": "CC2 (Sala Hidráulica) CO EFIASA pepa"  
       },
       {"label": "CC2 Cabina de Comandos C.O.EFAISA PEPA",
         "svg": "CC2 Cabina de Comandos C.O.EFAISA PEPA.svg",  
-        "gltf": "CC2 Cabina de Comandos C.O.EFAISA PEPA.gltf"  
+        "gltf": "CC2 Cabina de Comandos C.O.EFAISA PEPA"  
       },
       {"label": "CC2-Sala PLC CO EFIASA pepa",
         "svg": "CC2-Sala PLC CO EFIASA pepa.svg",  
-        "gltf": "CC2-Sala PLC CO EFIASA pepa.gltf"  
+        "gltf": "CC2-Sala PLC CO EFIASA pepa"  
       },
       {"label": "CC2-Taller GMB CO EFAISA",
         "svg": "CC2-Taller GMB CO EFAISA.svg",  
-        "gltf": "CC2-Taller GMB CO EFAISA.gltf"  
+        "gltf": "CC2-Taller GMB CO EFAISA"  
       }
   ]
 
