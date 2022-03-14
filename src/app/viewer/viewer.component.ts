@@ -1,14 +1,12 @@
 import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core'
-import { ActionEvent, SceneSerializer, Tools } from '@babylonjs/core'
-import { ActionManager } from '@babylonjs/core'
-import { Engine, Mesh, MeshBuilder, Scene, SceneLoader, Vector3, DebugLayer, DebugLayerTab, GizmoManager, ArcRotateCamera, Color3, HemisphericLight, StandardMaterial } from '@babylonjs/core'
-// import "@babylonjs/loaders"
-// import "@babylonjs/core/Debug/debugLayer";
-// import "@babylonjs/gui"
+import { DynamicTexture } from '@babylonjs/core'
+import { SceneSerializer, Tools, Engine, Mesh, MeshBuilder, Scene, SceneLoader, Vector3, DebugLayer, DebugLayerTab, GizmoManager, ArcRotateCamera, Color3, HemisphericLight, StandardMaterial } from '@babylonjs/core'
+// import * as BABYLON from '@babylonjs/core';
+// (window as any).BABYLON = BABYLON;
 import "@babylonjs/inspector"
-import { GridMaterial } from "@babylonjs/materials"
+import { CustomMaterial, GridMaterial } from "@babylonjs/materials"
 import { ToolbarComponent } from '../toolbar/toolbar.component'
-// import { Ellipse, GUI3DManager, MeshButton3D, TextBlock } from '@babylonjs/gui'
+// import {MeshWriter} from 'meshwriter'
 @Component({
   selector: 'app-viewer',
   templateUrl: './viewer.component.html',
@@ -52,14 +50,17 @@ export class ViewerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.modelEngine()
-    this.addGround()
-    this.addLight()
-    this.addCamera()
-    this.startRender()
+    // this.startScene()
+    // this.createText()
   }
-
-  modelEngine() {
+  // startScene() {
+  //   this.createEngine(model)
+  //   this.addGround()
+  //   this.addLight()
+  //   this.addCamera()
+  //   this.startRender()
+  // }
+  createEngine(model: string | File | undefined) {
 
     const self = this
     this.engine = new Engine(this.renderCanvas.nativeElement, true)
@@ -67,13 +68,13 @@ export class ViewerComponent implements OnInit {
     this.scene = new Scene(this.engine)
 
     this.scene.onPointerDown = function (evt, evtdata) {
-      if (self.camera){
-        console.log(self.camera.alpha) 
-        console.log(self.camera.radius) 
-        console.log(self.camera.beta) 
+      if (self.camera) {
+        console.log(self.camera.alpha)
+        console.log(self.camera.radius)
+        console.log(self.camera.beta)
         console.log(self.camera.target)
         console.log(self.camera.panningSensibility)
-      }  
+      }
     }
 
 
@@ -99,7 +100,7 @@ export class ViewerComponent implements OnInit {
         this.selectedMeshrotatey = this.selectedMesh.rotation.y.toFixed(2)
         this.selectedMeshrotatez = this.selectedMesh.rotation.z.toFixed(2)
 
-        this.selectedMeshscale = Math.abs(this.selectedMesh.scaling.z.toFixed(2) * 100) 
+        this.selectedMeshscale = Math.abs(this.selectedMesh.scaling.z.toFixed(2) * 100)
         this.selectedMeshscale = Math.abs(this.selectedMesh.scaling.x.toFixed(2) * 100)
         this.selectedMeshscale = Math.abs(this.selectedMesh.scaling.y.toFixed(2) * 100)
 
@@ -124,13 +125,16 @@ export class ViewerComponent implements OnInit {
     //   this.selectedMeshscale = this.selectedMesh.scaling.z.toFixed(2)
     // })
 
-    SceneLoader.ImportMesh("", "./assets/", "ccmodel.gltf", this.scene, function (meshes) {
+    SceneLoader.ImportMesh("", "./assets/", model, this.scene, function (meshes) {
       self.ccmeshes = meshes
+      if (meshes) {
+        console.log(meshes[0]);
+        meshes[0].scaling = new Vector3(1, 1, -1)
+      }
       meshes.forEach(mesh => {
         mesh.isPickable = false
       });
     })
-
     // const ground_standard = new StandardMaterial("ground_standar", this.scene)
     // ground_standard.alpha = 0.1
     // ground_standard.diffuseColor = new Color3(0.458, 0.447, 1)
@@ -185,8 +189,6 @@ export class ViewerComponent implements OnInit {
     // svgmaterial.diffuseTexture = oneTexture 
 
     // this.svg.material = svgmaterial 
-
-
   }
 
   addCamera() {
@@ -220,7 +222,17 @@ export class ViewerComponent implements OnInit {
     this.light = new HemisphericLight("hemi", new Vector3(0, 1, 0), this.scene!)
     this.light.excludedMeshes.push()
   }
-
+  createText() {
+    // var textBlock = new BABYLON.GUI.TextBlock('textblock', 'hello world!');
+    // textBlock.color = 'white';
+    // textBlock.fontSize = '36px';
+    // textBlock.fontFamily = "'Segoe UI', 'Segoe UI Web (West European)', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Helvetica Neue', 'sans serif'";
+    // textBlock.textHorizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
+    // textBlock.paddingLeft = 20;
+    // textBlock.paddingRight = 20;
+    // textBlock.resizeToFit = true;
+    // rect1.addControl(textBlock);
+  }
   startRender() {
     const self = this
     this.engine!.runRenderLoop(() => {
@@ -239,6 +251,9 @@ export class ViewerComponent implements OnInit {
         // if (this.camera.target.x <= -18 || this.camera.target.x >=18) {
         //   this.camera.target.x = 0
         // }
+        if (this.camera.beta > Math.PI / 2) {
+          this.camera.beta = Math.PI / 2 - 0.01
+        }
       }
       if (this.scene) {
         this.scene.render()

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
+import { ToggleComponentsService } from './toggle-components.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'plano';
+  public isOn: boolean = true; 
+
+  constructor (public toggleComponentService: ToggleComponentsService){
+  }
+
+  
 }

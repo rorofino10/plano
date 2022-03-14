@@ -1,16 +1,75 @@
 <div class="start">
-        <a href="#" class="list-item">
+        <!-- <a href="#" class="list-item">
             <div class="header">Explorer</div>
-            <div class="item">CC2 2020</div>
-            <div class="item">CC3 2020</div>
-            <div class="item">Geac 2020</div>
-            <div class="item">Horno Afino Nº4 2020</div>
-            <div class="item">Horno Afino Nº5 2020</div>
-            <div class="item">REDI</div>
-            <div class="item">Sub 19 2020</div>
-            <div class="item">Tuneles de Cables</div>
+            <div class="item" *ngFor=" let item of this.menu.folders"> {{ item.label }} </div>
+        </a> -->
+        <!-- <div class="list">
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC2_2020"> {{ item.title }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC2_2020" (click)="log( item.gltf )"> {{ item.gltf }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC2_2020"> {{ item.svg }} </a>
+        </div> -->
+        <div class="list">
+            <!-- <a href="#" class="header"> {{ this.menu.CC3_2020.title }}</a> -->
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020" (click)="this.toggleComponentService.toggleComponent(item.gltf)"> {{ item.title }} {{ item.gltf }}</a>
+        </div>
+        <!-- <div class="list">
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
+        </div>
+        <div class="list">
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
+        </div>
+        <div class="list">
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
+        </div>
+        <div class="list">
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
+        </div>
+        <div class="list">
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
+        </div>
+        <div class="list">
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
+        </div>
+        <div class="list">
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
+        </div>
+        <div class="list">
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
+        </div> -->
+        <!-- <a *ngIf="this.show == true" href="#" class="list-item">
+            <div class="item">CC3 (Cabina Comando) CO EFAISA</div>
+            <div class="item">CC3 (Cabina eléctrica CCM)+315 CO EFAISA</div>
+            <div class="item">CC3 (Sala Hidráulica) CO EFAISA</div>
+            <div class="item">CC3-Sala PLC +685 CO EFAISA</div>
+            <div class="item">CC3 (Cabina Comando)</div>
+            <div class="item">CC3 (Cabina eléctrica y Sala Presurización +6.85 y +8.48)</div>
+            <div class="item">CC3 (Sala Hidráulica)</div>
         </a>
-        <a href="#" class="list-item load">
+        <a *ngIf="this.show == true" href="#" class="list-item">
+            <div class="item">Geac & Sear CO EFAISA</div>
+            <div class="item">GEAC PB Sala de Tableros CO EFAISA</div>
+        </a>
+        <a *ngIf="this.show == true" href="#" class="list-item">
+            <div class="item">LF4 (Cabina Comando) CO EFAISA</div>
+            <div class="item">LF4 (Cabina Comando) CO EFAISA</div>
+        </a> -->
+        <!-- <a href="#" class="list-item load">
             LOAD
-        </a>
+        </a> -->
 </div>
