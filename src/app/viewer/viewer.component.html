@@ -1,15 +1,13 @@
-<script src="https://preview.babylonjs.com/earcut.min.js"></script>
-
 <div class="canvas-container">
     <canvas #renderCanvas class="renderCanvas"></canvas>
-    <div class="custombox">
+    <div *ngIf="this.isOn" class="custombox">
         <div class="custombox-start">
-            <a href="#">NEW</a>
+            <a href="#" (click)="this.toggleComponentService.showMenu()">NEW</a>
             <a href="#" (click)="loadScene()">LOAD</a>
             <a href="#" (click)="saveScene('example', this.ccmeshes)">SAVE</a>
         </div>
         <div class="custombox-end">
-            <a href="#" >
+            <a href="#">
                 <img src="./assets/configicon.svg" alt="config">
             </a>
             <a href="#" (click)="openFullscreen()">
@@ -17,7 +15,7 @@
             </a>
         </div>
     </div>
-    <div class="toolbox">
+    <div *ngIf="this.isOn" class="toolbox">
         <div class="toolbox-start">
             <a href="#" (click)="toggleWireframe()">
                 <img src="./assets/wireframe.svg" alt="wireframe">
@@ -52,31 +50,31 @@
             </a>
         </div>
     </div>
-    <div *ngIf="this.assetshow" class="assetbar">
+    <div *ngIf="this.assetshow && this.isOn" class="assetbar">
         <a href="#" (click)="importMesh('extintor.gltf')">
             <img src="./assets/extintor.png" alt="extintorpng">
         </a>
         <a href="#" (click)="importMesh('axe.gltf')">
             <img src="./assets/axe.png" alt="axepng">
         </a>
-</div>
-    <div  *ngIf="this.selectedMesh" class="camerabar">
+    </div>
+    <div *ngIf="this.selectedMesh && this.isOn" class="camerabar">
         <div class="camerabar-top">
             <div class="gizmo">
                 <a href="#" (click)="moveGizmo()">
                     <img src="./assets/move.svg" alt="move">
                 </a>
                 <a href="#">
-                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshpositionx" #ctrl="ngModel"
-                        (ngModelChange)="updateMeshPosition()" min="-25" max="25">
+                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshpositionx"
+                        #ctrl="ngModel" (ngModelChange)="updateMeshPosition()" min="-25" max="25">
                 </a>
                 <a href="#">
-                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshpositiony" #ctrl="ngModel"
-                        (ngModelChange)="updateMeshPosition()" min="-25" max="25">
+                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshpositiony"
+                        #ctrl="ngModel" (ngModelChange)="updateMeshPosition()" min="-25" max="25">
                 </a>
                 <a href="#">
-                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshpositionz" #ctrl="ngModel"
-                        (ngModelChange)="updateMeshPosition()" min="-25" max="25">
+                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshpositionz"
+                        #ctrl="ngModel" (ngModelChange)="updateMeshPosition()" min="-25" max="25">
                 </a>
             </div>
             <div class="gizmo">

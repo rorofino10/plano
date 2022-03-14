@@ -5,6 +5,7 @@ import { SceneSerializer, Tools, Engine, Mesh, MeshBuilder, Scene, SceneLoader, 
 // (window as any).BABYLON = BABYLON;
 import "@babylonjs/inspector"
 import { CustomMaterial, GridMaterial } from "@babylonjs/materials"
+import { ToggleComponentsService } from '../toggle-components.service'
 import { ToolbarComponent } from '../toolbar/toolbar.component'
 // import {MeshWriter} from 'meshwriter'
 @Component({
@@ -37,7 +38,7 @@ export class ViewerComponent implements OnInit {
   public isfullscreen: any = false
   public assetshow: any = true
   public inspectorvis: any = false
-
+  public isOn: boolean = false
   private groundgrid: any = true
   private groundstandard: any = false
 
@@ -46,21 +47,30 @@ export class ViewerComponent implements OnInit {
   @ViewChild('meshprop', { static: true }) meshprop!: ElementRef
   private showgrid: any = true
   private ground: Mesh | any
-  constructor(private toolbarComponent: ToolbarComponent) {
+  file: any
+  constructor(public toggleComponentService: ToggleComponentsService) {
   }
 
   ngOnInit(): void {
-    // this.startScene()
-    // this.createText()
+    this.toggleComponentService.model.subscribe( file => {
+      this.isOn = true
+      this.file = file
+      this.startScene()
+    })
+    this.toggleComponentService.onMenuChange.subscribe( val => {
+      this.engine?.dispose()
+      this.scene?.dispose()
+      this.isOn = false
+    })
   }
-  // startScene() {
-  //   this.createEngine(model)
-  //   this.addGround()
-  //   this.addLight()
-  //   this.addCamera()
-  //   this.startRender()
-  // }
-  createEngine(model: string | File | undefined) {
+  startScene() {
+    this.createEngine(this.file)
+    this.addGround()
+    this.addLight()
+    this.addCamera()
+    this.startRender()
+  }
+  createEngine(file: string | File | undefined) {
 
     const self = this
     this.engine = new Engine(this.renderCanvas.nativeElement, true)
@@ -125,7 +135,7 @@ export class ViewerComponent implements OnInit {
     //   this.selectedMeshscale = this.selectedMesh.scaling.z.toFixed(2)
     // })
 
-    SceneLoader.ImportMesh("", "./assets/", model, this.scene, function (meshes) {
+    SceneLoader.ImportMesh("", "./assets/", file, this.scene, function (meshes) {
       self.ccmeshes = meshes
       if (meshes) {
         console.log(meshes[0]);

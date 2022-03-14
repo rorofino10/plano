@@ -1,4 +1,4 @@
-<div class="start">
+<div *ngIf="this.isOn" class="start">
         <!-- <a href="#" class="list-item">
             <div class="header">Explorer</div>
             <div class="item" *ngFor=" let item of this.menu.folders"> {{ item.label }} </div>
@@ -10,7 +10,7 @@
         </div> -->
         <div class="list">
             <!-- <a href="#" class="header"> {{ this.menu.CC3_2020.title }}</a> -->
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020" (click)="this.toggleComponentService.toggleComponent(item.gltf)"> {{ item.title }} {{ item.gltf }}</a>
+            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020" (click)="this.toggleComponentService.setModel( item.gltf); hide()" > {{ item.title }} {{ item.gltf }}</a>
         </div>
         <!-- <div class="list">
             <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
