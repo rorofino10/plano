@@ -1,16 +1,8 @@
 {
-  "folders": [
-    {"label": "CC2 2020"},
-    {"label": "CC3 2020"},
-    {"label": "Geac 2020"},
-    {"label": "Horno Afino Nº4 2020"},
-    {"label": "Horno Afino Nº5 2020"},
-    {"label": "REDI"},
-    {"label": "Sub 19 2020"},
-    {"label": "Tuneles de Cables"}
-  ],
-  "CC2_2020": [
-      {"title": "CC2_2020"},
+  "CC2_2020":{
+    "title": "CC2_2020", 
+    "items":[
+      
       {"label": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75)",
         "svg": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75).svg",  
         "gltf": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75)"
@@ -39,16 +31,18 @@
         "svg": "CC2-Taller GMB CO EFAISA.svg",  
         "gltf": "CC2-Taller GMB CO EFAISA"  
       }
-  ],
-  "CC3_2020": [
-      {"title": "CC3_2020"},
+  ]},
+  "CC3_2020":{
+    "title": "CC3_2020", 
+    "items":[
+      
       {"label": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75)",
         "svg": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75).svg",  
         "gltf": "CC2 (Cabina eléctrica y oleodinámica -0.3 y +3.75)"
       },
       {"label": "CC2 (EP CABLES) CO EFAISA pepa",
-        "svg": "CC2 (EP CABLES) CO EFAISA pepagltf.svg",  
-        "gltf": "CC2 (EP CABLES) CO EFAISA pepagltf"  
+        "svg": "CC2 (EP CABLES) CO EFAISA pepa.svg",  
+        "gltf": "CC2 (EP CABLES) CO EFAISA pepa"  
       },
       {"label": "CC2 (Sala CCM & PLC) CO EFAISA pepa",
         "svg": "CC2 (Sala CCM & PLC) CO EFAISA pepa.svg",  
@@ -70,6 +64,6 @@
         "svg": "CC2-Taller GMB CO EFAISA.svg",  
         "gltf": "CC2-Taller GMB CO EFAISA"  
       }
-  ]
-
+  ]}
+  
 }
