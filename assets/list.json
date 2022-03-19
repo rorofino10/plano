@@ -32,6 +32,19 @@
         "gltf": "CC2-Taller GMB CO EFAISA"  
       }
   ]},
+  "Planos":{
+    "title": "CC2_2020", 
+    "items":[
+      
+      {"label": "CC2-Sala PLC CO EFIASA pepa",
+        "svg": "CC2-Sala PLC CO EFIASA pepa.svg",  
+        "gltf": "CC2-Sala PLC CO EFIASA pepa"
+      },
+      {"label": "CC2 (EP CABLES) CO EFAISA pepa",
+        "svg": "CC2-Taller GMB CO EFAISA.svg",  
+        "gltf": "CC2-Taller GMB CO EFAISA"  
+      }
+  ]},
   "CC3_2020":{
     "title": "CC3_2020", 
     "items":[
