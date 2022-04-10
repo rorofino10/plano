@@ -20,9 +20,9 @@
             <a href="#" (click)="toggleWireframe()">
                 <img src="./assets/wireframe.svg" alt="wireframe">
             </a>
-            <a href="#" (click)="screenshot()">
+            <!-- <a href="#" (click)="screenshot()">
                 <img src="./assets/screenshot.svg" alt="screenshot">
-            </a>
+            </a> -->
             <a href="#" (click)="toggleInspector()">
                 <img src="./assets/debug.svg" alt="debug">
             </a>
@@ -30,15 +30,15 @@
                 <img src="./assets/grid.svg" alt="grid">
             </a>
         </div>
-        <div class="toolbox-mid">
+        <!-- <div class="toolbox-mid">
             <a href="#" (click)="showAsset()">
                 <img src="./assets/asset.svg" alt="asset">
             </a>
-        </div>
+        </div> -->
         <div class="toolbox-end">
-            <a href="#">
+            <!-- <a href="#">
                 <img src="./assets/export.svg" alt="export">
-            </a>
+            </a> -->
             <a href="#" (click)="setDefaultView()">
                 <img src="./assets/defcam.svg" alt="camera">
             </a>
@@ -50,14 +50,14 @@
             </a>
         </div>
     </div>
-    <div *ngIf="this.assetshow && this.isOn" class="assetbar">
+    <!-- <div *ngIf="this.assetshow && this.isOn" class="assetbar">
         <a href="#" (click)="importMesh('extintor.gltf')">
             <img src="./assets/extintor.png" alt="extintorpng">
         </a>
         <a href="#" (click)="importMesh('axe.gltf')">
             <img src="./assets/axe.png" alt="axepng">
         </a>
-    </div>
+    </div> -->
     <div *ngIf="this.selectedMesh && this.isOn" class="camerabar">
         <div class="camerabar-top">
             <div class="gizmo">

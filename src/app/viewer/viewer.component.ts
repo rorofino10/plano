@@ -1,4 +1,5 @@
 import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core'
+import { Texture } from '@babylonjs/core'
 import { DynamicTexture } from '@babylonjs/core'
 import { SceneSerializer, Tools, Engine, Mesh, MeshBuilder, Scene, SceneLoader, Vector3, DebugLayer, DebugLayerTab, GizmoManager, ArcRotateCamera, Color3, HemisphericLight, StandardMaterial } from '@babylonjs/core'
 // import * as BABYLON from '@babylonjs/core';
@@ -15,7 +16,7 @@ import { ToolbarComponent } from '../toolbar/toolbar.component'
 })
 export class ViewerComponent implements OnInit {
   private engine: Engine | undefined
-  private scene: Scene | undefined
+  private scene: Scene | any
   private svg: Mesh | undefined
   private light: HemisphericLight | undefined
   private camera: ArcRotateCamera | undefined
@@ -76,8 +77,10 @@ export class ViewerComponent implements OnInit {
     this.engine = new Engine(this.renderCanvas.nativeElement, true)
 
     this.scene = new Scene(this.engine)
+    this.scene.clearColor = new Color3(1, 1, 1)
 
-    this.scene.onPointerDown = function (evt, evtdata) {
+    this.scene.onPointerDown = function (evt: any, evtdata: any) {
+      console.log(this.mesh)
       if (self.camera) {
         console.log(self.camera.alpha)
         console.log(self.camera.radius)
@@ -135,7 +138,7 @@ export class ViewerComponent implements OnInit {
     //   this.selectedMeshscale = this.selectedMesh.scaling.z.toFixed(2)
     // })
 
-    SceneLoader.ImportMesh("", "./assets/", file, this.scene, function (meshes) {
+    SceneLoader.ImportMesh("", "./assets/planos/", (file + ".gltf"), this.scene, function (meshes) {
       self.ccmeshes = meshes
       if (meshes) {
         console.log(meshes[0]);
@@ -209,6 +212,10 @@ export class ViewerComponent implements OnInit {
     this.camera.upperRadiusLimit = 200
     // this.camera.panningSensibility = 1950
   }
+  addSVG(){
+    const svg = MeshBuilder.CreateGround("svg", {height:20, width: 20, subdivisions: 8}, this.scene)
+    const svgtexture = new Texture("./assets/svg/Test1.svg", this.scene)
+  }
   addGround() {
     // const apara = MeshBuilder.CreateGround("ground",  {height: 200, width: 300, subdivisions: 8}, this.scene)
     // apara.overlayColor
@@ -224,9 +231,6 @@ export class ViewerComponent implements OnInit {
     this.groundgrid.lineColor = new Color3(1, 1, 1)
     this.groundgrid.opacity = 0.99
     this.ground.material = this.groundgrid
-  }
-  addSVG() {
-    // MeshBuilder.CreateGround()
   }
   addLight() {
     this.light = new HemisphericLight("hemi", new Vector3(0, 1, 0), this.scene!)
@@ -267,7 +271,6 @@ export class ViewerComponent implements OnInit {
       }
       if (this.scene) {
         this.scene.render()
-
       }
       this.renderCanvas.nativeElement.onresize = function () {
         if (self.engine) {
@@ -281,7 +284,9 @@ export class ViewerComponent implements OnInit {
       };
     })
   }
-
+  clone(){
+    this.selectedMesh.clone(this.selectedMesh.name, "Clone")
+  }
   toggleGroundMaterial() {
 
     this.showgrid = !this.showgrid
@@ -295,15 +300,15 @@ export class ViewerComponent implements OnInit {
   }
   importMesh(importedMesh: string | File | undefined) {
     SceneLoader.ImportMesh("", "./assets/", importedMesh, this.scene, function (meshes) {
-
+      // console.log(meshes[0].rotation)
     })
     this.assetshow = false
   }
 
   loadScene() {
-    SceneLoader.ImportMesh("", "./assets/", "meshes.babylon", this.scene, function (meshes) {
-
-    })
+    this.scene.dispose()
+    this.scene =  SceneLoader.Load("./assets/", "example.babylon", this.engine)
+    
   }
 
   toggleWireframe() {
@@ -362,9 +367,9 @@ export class ViewerComponent implements OnInit {
     // this.selectedMesh.rotation.y = this.selectedMeshrotatey  
     // this.selectedMesh.rotation.z = this.selectedMeshrotatez  
 
-    this.selectedMesh.scaling.z = this.selectedMeshscale / 100
-    this.selectedMesh.scaling.x = this.selectedMeshscale / 100
-    this.selectedMesh.scaling.y = this.selectedMeshscale / 100
+    this.selectedMesh.scaling.z = Math.abs(this.selectedMeshscale / 100)
+    this.selectedMesh.scaling.x = Math.abs(this.selectedMeshscale / 100)
+    this.selectedMesh.scaling.y = Math.abs(this.selectedMeshscale / 100)
 
 
   }
