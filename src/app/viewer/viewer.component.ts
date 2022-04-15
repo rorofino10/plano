@@ -301,6 +301,9 @@ export class ViewerComponent implements OnInit {
   importMesh(importedMesh: string | File | undefined) {
     SceneLoader.ImportMesh("", "./assets/", importedMesh, this.scene, function (meshes) {
       // console.log(meshes[0].rotation)
+      // meshes.forEach(mesh => {
+      //   mesh.material!.wireframe = true
+      // })
     })
     this.assetshow = false
   }

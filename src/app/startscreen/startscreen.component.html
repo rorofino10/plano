@@ -1,78 +1,11 @@
+<!-- <input type="text" #search>
+<label for=""> {{ this.search.value}} </label> -->
 <div *ngIf="this.isOn" class="start">
-        <!-- <a href="#" class="list-item">
-            <div class="header">Explorer</div>
-            <div class="item" *ngFor=" let item of this.menu.folders"> {{ item.label }} </div>
-        </a> -->
-        <!-- <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC2_2020"> {{ item.title }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC2_2020" (click)="log( item.gltf )"> {{ item.gltf }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC2_2020"> {{ item.svg }} </a>
-        </div> -->
-        <!-- <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC2_2020" (click)="this.toggleComponentService.setModel( item.gltf); hide()" > {{ item.title }} {{ item.gltf }}</a>
-        </div> -->
-        <div class="list">
-            <a href="#" class="header"> {{ this.menu.Planos.title}}</a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.Planos.items" (click)="this.toggleComponentService.setModel( item.gltf); hide()" > {{ item.title }} {{ item.gltf }}</a>
-        </div>
-        <!-- <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
-        </div>
-        <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
-        </div>
-        <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
-        </div>
-        <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
-        </div>
-        <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
-        </div>
-        <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
-        </div>
-        <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
-        </div>
-        <div class="list">
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.title }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.gltf }} </a>
-            <a href="#" class="item" *ngFor=" let item of this.menu.CC3_2020"> {{ item.svg }} </a>
-        </div> -->
-        <!-- <a *ngIf="this.show == true" href="#" class="list-item">
-            <div class="item">CC3 (Cabina Comando) CO EFAISA</div>
-            <div class="item">CC3 (Cabina eléctrica CCM)+315 CO EFAISA</div>
-            <div class="item">CC3 (Sala Hidráulica) CO EFAISA</div>
-            <div class="item">CC3-Sala PLC +685 CO EFAISA</div>
-            <div class="item">CC3 (Cabina Comando)</div>
-            <div class="item">CC3 (Cabina eléctrica y Sala Presurización +6.85 y +8.48)</div>
-            <div class="item">CC3 (Sala Hidráulica)</div>
-        </a>
-        <a *ngIf="this.show == true" href="#" class="list-item">
-            <div class="item">Geac & Sear CO EFAISA</div>
-            <div class="item">GEAC PB Sala de Tableros CO EFAISA</div>
-        </a>
-        <a *ngIf="this.show == true" href="#" class="list-item">
-            <div class="item">LF4 (Cabina Comando) CO EFAISA</div>
-            <div class="item">LF4 (Cabina Comando) CO EFAISA</div>
-        </a> -->
-        <!-- <a href="#" class="list-item load">
-            LOAD
-        </a> -->
+    <input type="search" [(ngModel)]="searchText" (ngModelChange)="onSearchChange()" placeholder="Search Text">
+    <ul class="list">
+        <li class="item" *ngFor=" let item of filtereditems">
+            <button (click)="this.toggleComponentService.setModel( item.gltf); hide()" >{{ item.gltf }}</button>
+        </li>
+    </ul>
+
 </div>
