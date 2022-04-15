@@ -1,7 +1,14 @@
 {
   "Planos":{
     "items":[
-      {"gltf": "CC2-Cabina de Comandos"},
-      {"gltf": "CC2-Cabina de Comandos"}
+      {"gltf": "CC2 Cabina de Comandos"},
+      {"gltf": "CC2 Sala PLC CO EFAISA"},
+      {"gltf": "Horno 5 (Entrepiso de cables) CO EFAISA"},
+      {"gltf": "Planta de cal  (Sala eléctrica) CO EFAISA"},
+      {"gltf": "REDI Edificio Control pa 2022"},
+      {"gltf": "REDI Edificio Control pb 2022"},
+      {"gltf": "REDI Edificio mantenimiento PB 2022"},
+      {"gltf": "Sala de Control Briqueteadora CO EFAISA"},
+      {"gltf": "Sala Eléctrica Briqueteadora CO EFAISA"}
   ]}
 }
