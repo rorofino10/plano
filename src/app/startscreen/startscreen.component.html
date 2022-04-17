@@ -6,6 +6,7 @@
         <li class="item" *ngFor=" let item of filtereditems">
             <button (click)="this.toggleComponentService.setModel( item.gltf); hide()" >{{ item.gltf }}</button>
         </li>
+        <h1 *ngIf="filtereditems.length === 0">Sin Resultados</h1>
     </ul>
 
 </div>

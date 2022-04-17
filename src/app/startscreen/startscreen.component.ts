@@ -36,8 +36,18 @@ export class StartscreenComponent implements OnInit {
     // });
   }
   onSearchChange() {
-    this.searchText = this.searchText.toLocaleUpperCase()
-    this.filtereditems = list.Planos.items.filter(item => item.gltf.toLocaleLowerCase().includes(this.searchText.toLocaleLowerCase()))
+    const str = this.searchText.toLowerCase()
+    const arr: [] = (str != "") ? str.split(" ") : []
+
+    if (arr.length>0) {
+      this.filtereditems = list.Planos.items.filter(item => {
+        if (arr.find((e: string) => item.gltf.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(" ", "").includes(e))){
+          return true
+        }
+        else return false
+      })
+    }
+    else this.filtereditems = list.Planos.items
   }
   ngOnInit(): void {
     this.toggleComponentService.onMenuChange.subscribe(val => {

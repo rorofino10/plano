@@ -49,6 +49,7 @@ export class ViewerComponent implements OnInit {
   private showgrid: any = true
   private ground: Mesh | any
   file: any
+  modelo: any
   constructor(public toggleComponentService: ToggleComponentsService) {
   }
 
@@ -138,7 +139,7 @@ export class ViewerComponent implements OnInit {
     //   this.selectedMeshscale = this.selectedMesh.scaling.z.toFixed(2)
     // })
 
-    SceneLoader.ImportMesh("", "./assets/planos/", (file + ".gltf"), this.scene, function (meshes) {
+    this.modelo = SceneLoader.ImportMesh("", "./assets/planos/", (file + ".gltf"), this.scene, function (meshes) {
       self.ccmeshes = meshes
       if (meshes) {
         console.log(meshes[0]);
@@ -207,6 +208,9 @@ export class ViewerComponent implements OnInit {
   addCamera() {
     this.camera = new ArcRotateCamera("CameraX", 0, 0, 25, new Vector3(0, 0, 0), this.scene)
     this.camera.attachControl(this.renderCanvas.nativeElement, true)
+    this.camera.useBouncingBehavior = false
+    this.camera.useFramingBehavior = true
+    // this.camera.setTarget(this.modelo)
     this.camera.wheelPrecision = 50
     this.camera.lowerRadiusLimit = 1.1
     this.camera.upperRadiusLimit = 200
