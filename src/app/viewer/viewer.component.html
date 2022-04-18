@@ -2,33 +2,27 @@
     <canvas #renderCanvas class="renderCanvas"></canvas>
     <div *ngIf="this.isOn" class="custombox">
         <div class="custombox-start">
-            <a href="#" (click)="this.toggleComponentService.showMenu()">NEW</a>
-            <a href="#" (click)="loadScene()">LOAD</a>
-            <a href="#" (click)="saveScene('example', this.ccmeshes)">SAVE</a>
+            <button (click)="this.toggleComponentService.showMenu()">NEW</button>
+            <!-- <a href="#" (click)="loadScene()">LOAD</a>
+            <a href="#" (click)="saveScene('example', this.ccmeshes)">SAVE</a> -->
         </div>
         <div class="custombox-end">
-            <a href="#">
+            <button>
                 <img src="./assets/configicon.svg" alt="config">
-            </a>
-            <a href="#" (click)="openFullscreen()">
+            </button>
+            <button (click)="openFullscreen()">
                 <img src="./assets/fullscreen.svg" alt="fullscreen">
-            </a>
+            </button>
         </div>
     </div>
     <div *ngIf="this.isOn" class="toolbox">
         <div class="toolbox-start">
-            <a href="#" (click)="toggleWireframe()">
-                <img src="./assets/wireframe.svg" alt="wireframe">
-            </a>
             <!-- <a href="#" (click)="screenshot()">
                 <img src="./assets/screenshot.svg" alt="screenshot">
-            </a> -->
+            </a>
             <a href="#" (click)="toggleInspector()">
                 <img src="./assets/debug.svg" alt="debug">
-            </a>
-            <a href="#" (click)="toggleGroundMaterial()">
-                <img src="./assets/grid.svg" alt="grid">
-            </a>
+            </a> -->
         </div>
         <!-- <div class="toolbox-mid">
             <a href="#" (click)="showAsset()">
@@ -39,15 +33,21 @@
             <!-- <a href="#">
                 <img src="./assets/export.svg" alt="export">
             </a> -->
-            <a href="#" (click)="setDefaultView()">
+            <!-- <a href="#" (click)="toggleWireframe()">
+                <img src="./assets/wireframe.svg" alt="wireframe">
+            </a> -->
+            <button (click)="toggleGroundMaterial()">
+                <img src="./assets/grid.svg" alt="grid">
+            </button>
+            <button href="#" (click)="setDefaultView()">
                 <img src="./assets/defcam.svg" alt="camera">
-            </a>
-            <a href="#" (click)="zoomIn()">
+            </button>
+            <button href="#" (click)="zoomIn()">
                 <img src="./assets/zoominf.svg" alt="zoomIn">
-            </a>
-            <a href="#" (click)="zoomOut()">
+            </button>
+            <button href="#" (click)="zoomOut()">
                 <img src="./assets/zoomoutf.svg" alt="zoomIn">
-            </a>
+            </button>
         </div>
     </div>
     <!-- <div *ngIf="this.assetshow && this.isOn" class="assetbar">
@@ -58,7 +58,7 @@
             <img src="./assets/axe.png" alt="axepng">
         </a>
     </div> -->
-    <div *ngIf="this.selectedMesh && this.isOn" class="camerabar">
+    <!-- <div *ngIf="this.selectedMesh && this.isOn" class="camerabar">
         <div class="camerabar-top">
             <div class="gizmo">
                 <a href="#" (click)="moveGizmo()">
@@ -96,7 +96,7 @@
             </a>
         </div>
 
-    </div>
+    </div> -->
 
 
 </div>

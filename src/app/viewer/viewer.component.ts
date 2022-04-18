@@ -59,7 +59,7 @@ export class ViewerComponent implements OnInit {
       this.isOn = true
       this.file = file
       this.startScene()
-      if (this.scene){
+      if (this.scene && this.color){
         this.scene.clearColor = Color3.FromHexString(this.color)
       }
     })
