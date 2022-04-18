@@ -1,7 +1,7 @@
 <div class="grid">
-    <app-toolbar class="s1"></app-toolbar>
+    <app-toolbar class="s1" (bgcolor)=" this.color = $event " ></app-toolbar>
     <div class="s2">
-        <startscreen class=""></startscreen>
-        <app-viewer class=""></app-viewer>
+        <startscreen class="" color="{{this.color}} "></startscreen>
+        <app-viewer class="" color="{{this.color}}"></app-viewer>
     </div>
 </div>

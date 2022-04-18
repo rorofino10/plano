@@ -1,4 +1,4 @@
-import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core'
+import { Component, ElementRef, Input, NgZone, OnInit, ViewChild } from '@angular/core'
 import { Texture } from '@babylonjs/core'
 import { DynamicTexture } from '@babylonjs/core'
 import { SceneSerializer, Tools, Engine, Mesh, MeshBuilder, Scene, SceneLoader, Vector3, DebugLayer, DebugLayerTab, GizmoManager, ArcRotateCamera, Color3, HemisphericLight, StandardMaterial } from '@babylonjs/core'
@@ -15,6 +15,7 @@ import { ToolbarComponent } from '../toolbar/toolbar.component'
   styleUrls: ['./viewer.component.css']
 })
 export class ViewerComponent implements OnInit {
+  @Input() color: any
   private engine: Engine | undefined
   private scene: Scene | any
   private svg: Mesh | undefined
@@ -65,6 +66,12 @@ export class ViewerComponent implements OnInit {
       this.isOn = false
     })
   }
+  ngOnChanges(): void{
+    if (this.scene){
+      this.scene.clearColor = Color3.FromHexString(this.color)
+    }
+  }
+
   startScene() {
     this.createEngine(this.file)
     this.addGround()

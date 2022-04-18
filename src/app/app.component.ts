@@ -8,9 +8,8 @@ import { ToggleComponentsService } from './toggle-components.service';
 })
 export class AppComponent {
   public isOn: boolean = true; 
-
+  public color: any
   constructor (public toggleComponentService: ToggleComponentsService){
-  }
 
-  
+  }
 }

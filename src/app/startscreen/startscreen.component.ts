@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ViewerComponent } from '../viewer/viewer.component';
 import { ToggleComponentsService } from '../toggle-components.service';
 import list from './list.json'
+import { start } from 'repl';
 @Component({
   selector: 'startscreen',
   templateUrl: './startscreen.component.html',
@@ -10,12 +11,16 @@ import list from './list.json'
 })
 export class StartscreenComponent implements OnInit {
   @Input() isOn: boolean = true
-
+  @Input() color: any
   public show = false
   public value: any
   public searchText: any
   public menu: Object | any
   public label: HTMLLabelElement | any;
+  @ViewChild('start', { static: true })
+  body!: ElementRef;
+  @ViewChild('litem', { static: true })
+  litem!: ElementRef;
   // url: string = 'https://jsonplaceholder.typicode.com/users';
   // usersArray: Array = [];
   filtereditems: any
@@ -35,6 +40,14 @@ export class StartscreenComponent implements OnInit {
     //   });
     // });
   }
+  ngOnInit(): void {
+    this.toggleComponentService.onMenuChange.subscribe(val => {
+      this.isOn = true
+    })
+  }
+  ngAfterViewInit(): void {
+    // this.color = this.body.nativeElement.style.background
+  }
   onSearchChange() {
     const str = this.searchText.toLowerCase()
     const arr: [] = (str != "") ? str.split(" ") : []
@@ -49,17 +62,8 @@ export class StartscreenComponent implements OnInit {
     }
     else this.filtereditems = list.Planos.items
   }
-  ngOnInit(): void {
-    this.toggleComponentService.onMenuChange.subscribe(val => {
-      this.isOn = true
-    })
-    const label = document.querySelector("label")
-    const search = document.querySelector("input")
-  }
-  changeVal() {
-    this.label.textContent = "YA"
-    // this.search.nativeElement.value = this.label.nativeElement.value
-  }
+
+
   hide() {
     this.isOn = false
 

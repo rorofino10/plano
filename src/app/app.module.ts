@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { TreeModule } from '@circlon/angular-tree-component';
 import { EventEmitter, Stream } from 'stream';
 import { FilterPipe } from './filter.pipe';
+import { NgxColorsModule } from 'ngx-colors';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { FilterPipe } from './filter.pipe';
     FilterPipe
   ],
   imports: [
+    BrowserAnimationsModule,
+    NgxColorsModule,
     TreeModule,
     HttpClientModule,
     FormsModule,

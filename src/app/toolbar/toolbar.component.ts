@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class ToolbarComponent{
-
+  @Output() bgcolor = new EventEmitter<any>()
+  public color: any
   public open: boolean = false;
   public themetoggle: boolean = true;
   public view: any = true;
+  onColorChange(value: string | undefined){
+    this.bgcolor.emit(value)
+  }
   toggleDropdown() {
     console.log(this.view)
     // this.open = !this.open;
