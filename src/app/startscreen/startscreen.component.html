@@ -2,11 +2,14 @@
 <label for=""> {{ this.search.value}} </label> -->
 <div *ngIf="this.isOn" class="start" #start [ngStyle]="{'background-color': color }">
     <input type="search" [(ngModel)]="searchText" (ngModelChange)="onSearchChange()" placeholder="Search Text">
-    <ul class="list">
-        <li class="item" *ngFor=" let item of filtereditems" >
-            <button class="btnitem" [ngStyle]="{'background-color': color }" (click)="this.toggleComponentService.setModel( item.gltf); hide()" >{{ item.gltf }}</button>
-        </li>
-        <h1 *ngIf="filtereditems.length === 0">Sin Resultados</h1>
-    </ul>
+    <div class="wrapper">
+        <ul class="list">
+            <li class="item" *ngFor=" let item of filtereditems" >
+                <button class="btnitem" [ngStyle]="{'background-color': color}" (click)="this.toggleComponentService.setModel( item.gltf); hide()" >{{ item.gltf }}</button>
+            </li>
+            <h1 *ngIf="filtereditems.length === 0">Sin Resultados</h1>
+        </ul>
+    </div>
+
 
 </div>

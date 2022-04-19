@@ -24,12 +24,14 @@ export class StartscreenComponent implements OnInit {
   // url: string = 'https://jsonplaceholder.typicode.com/users';
   // usersArray: Array = [];
   filtereditems: any
+  li!: number;
+  math!: Math;
   // @ViewChild("search")
   // search!: ElementRef; 
   // @ViewChild("label")
   // label!: ElementRef; 
   constructor(private http: HttpClient, public viewerComponent: ViewerComponent, public toggleComponentService: ToggleComponentsService) {
-    this.filtereditems = list.Planos.items
+    this.filtereditems = list.Planos.items.sort()
     // this.http.get("./assets/list.json").subscribe(response => {
     //   this.menu = response
     // })
@@ -44,6 +46,8 @@ export class StartscreenComponent implements OnInit {
     this.toggleComponentService.onMenuChange.subscribe(val => {
       this.isOn = true
     })
+    this.li = document.getElementsByTagName('li').length
+    this.math = Math
   }
   ngAfterViewInit(): void {
     // this.color = this.body.nativeElement.style.background
@@ -58,7 +62,7 @@ export class StartscreenComponent implements OnInit {
           return true
         }
         else return false
-      })
+      }).sort()
     }
     else this.filtereditems = list.Planos.items
   }
