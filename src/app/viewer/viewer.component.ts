@@ -58,6 +58,7 @@ export class ViewerComponent implements OnInit {
     this.toggleComponentService.model.subscribe( file => {
       this.isOn = true
       this.file = file
+      console.log('Hello')
       this.startScene()
       if (this.scene && this.color){
         this.scene.clearColor = Color3.FromHexString(this.color)
