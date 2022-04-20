@@ -15,7 +15,8 @@ import { ToolbarComponent } from '../toolbar/toolbar.component'
   styleUrls: ['./viewer.component.css']
 })
 export class ViewerComponent implements OnInit {
-  @Input() color: any
+  @Input()
+  color!: string 
   private engine: Engine | undefined
   private scene: Scene | any
   private svg: Mesh | undefined

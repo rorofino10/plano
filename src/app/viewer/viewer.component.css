@@ -8,8 +8,17 @@ button {
 	cursor: pointer;
 	outline: inherit;
     filter: brightness(0);
+    transition: transform 100ms ease-in-out, filter 100ms ease-in-out;
     margin: 10px 10px;
     font-size: 32px;
+}
+button:hover{
+    transform: scale(0.98);
+    filter:brightness(0.1);
+}
+button:active{
+    transform: scale(0.9);
+    filter:brightness(0.5);
 }
 canvas {
     outline: none;

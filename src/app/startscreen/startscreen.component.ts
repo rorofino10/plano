@@ -14,7 +14,7 @@ export class StartscreenComponent implements OnInit {
   @Input() color: any
   public show = false
   public value: any
-  public searchText: any
+  public searchText!: string;
   public menu: Object | any
   public label: HTMLLabelElement | any;
   @ViewChild('start', { static: true })
@@ -54,7 +54,7 @@ export class StartscreenComponent implements OnInit {
   }
   onSearchChange() {
     const str = this.searchText.toLowerCase()
-    const arr: [] = (str != "") ? str.split(" ") : []
+    const arr = (str != "") ? str.split(" ") : []
 
     if (arr.length>0) {
       this.filtereditems = list.Planos.items.filter(item => {
