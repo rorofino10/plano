@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ToggleComponentsService } from '../toggle-components.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,23 +10,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 export class ToolbarComponent{
   @Output() bgcolor = new EventEmitter<any>()
-  public color: any
-  public open: boolean = false;
-  public themetoggle: boolean = true;
-  public view: any = true;
-  onColorChange(value: string | undefined){
-    this.bgcolor.emit(value)
-  }
-  toggleDropdown() {
-    console.log(this.view)
-    // this.open = !this.open;
-  }
-  toggleView() {
-    this.view = !this.view
-  }
-  toggleTheme() {
-    this.themetoggle = !this.themetoggle;
-  }
+  public color: string = "#858383"
 
+  constructor (public toggleComponent:ToggleComponentsService){
+
+  }
 }
 

@@ -1,0 +1,169 @@
+{"items": [
+        {"gltf": "CC2 (Cabina eléctrica y oleodinámica 0.3 y +3.75)", "id": "CC2-(Cabina-elctrica-y-oleodinmica--0.3-y-+3.75)"
+        },
+        {"gltf": "CC2 (EP CABLES)", "id": "CC2-(EP-CABLES)-CO-EFAISA-pepa"
+        },
+        {"gltf": "CC2 (Sala CCM & PLC)", "id": "CC2-(Sala-CCM-&-PLC)-CO-EFAISA-pepa"
+        },
+        {"gltf": "CC2 (Sala Hidráulica)", "id": "CC2-(Sala-Hidrulica)-CO-EFIASA-pepa"
+        },
+        {"gltf": "CC2 Cabina de Comandos", "id": "CC2-Cabina-de-Comandos-C.O.EFAISA-PEPA"
+        },
+        {"gltf": "CC2 Sala PLC", "id": "CC2-Sala-PLC-CO-EFIASA-pepa"
+        },
+        {"gltf": "CC2 Taller GMB", "id": "CC2-Taller-GMB-CO-EFAISA"
+        },
+        {"gltf": "CC3 (Cabina Comando)", "id": "CC3-(Cabina-Comando)-CO-EFAISA"
+        },
+        {"gltf": "CC3 (Cabina eléctrica CCM)+315", "id": "CC3-(Cabina-elctrica-CCM)+315-CO-EFAISA"
+        },
+        {"gltf": "CC3 (Sala Hidráulica)", "id": "CC3-(Sala-Hidrulica)-CO-EFAISA"
+        },
+        {"gltf": "CC3 Sala PLC +685", "id": "CC3-Sala-PLC-+685-CO-EFAISA"
+        },
+        {"gltf": "CC3 (Cabina Comando)", "id": "CC3-(Cabina-Comando)"
+        },
+        {"gltf": "CC3 (Cabina eléctrica y Sala Presurización +6.85 y +8.48)", "id": "CC3-(Cabina-elctrica-y-Sala-Presurizacin-+6.85-y-+8.48)"
+        },
+        {"gltf": "CC3 (Sala Hidráulica)", "id": "CC3-(Sala-Hidrulica)"
+        },
+        {"gltf": "GEAC PB Sala de Tableros", "id": "GEAC-PB-Sala-de-Tableros-CO-EFAISA"
+        },
+        {"gltf": "Geac & Sear", "id": "Geac-&-Sear-CO-EFAISA"
+        },
+        {"gltf": "LF4 (Cabina Comando)", "id": "LF4-(Cabina-Comando)-CO-EFAISA"
+        },
+        {"gltf": "LF4 (Salas 10+PLC CCM y Sala Hidráulica)", "id": "LF4-(Salas-10+PLC-CCM-y-Sala-Hidrulica)-CO-EFAISA"
+        },
+        {"gltf": "6 0400 3341 R0A sub 15", "id": "6-0400-3341-R0A-sub-15"
+        },
+        {"gltf": "6 1519 3081 R0A LF5 PB", "id": "6-1519-3081-R0A-LF5-PB"
+        },
+        {"gltf": "Horno de tratamiento 5 (Sala de tranformadores Planta Alta)", "id": "Horno-de-tratamiento-5-(Sala-de-tranformadores-Planta-Alta)"
+        },
+        {"gltf": "LF5 (Cabina de Control)", "id": "LF5-(Cabina-de-Control)-CO-EFAISA"
+        },
+        {"gltf": "LF5 (Sala electrica 5 + PLC&CCM)", "id": "LF5-(Sala-electrica-5-+-PLC&CCM)-CO-EFAISA"
+        },
+        {"gltf": "Horno 4 (Cabina Eléctrica Nº 8)", "id": "Horno-4-(Cabina-Elctrica-N-8)-CO-EFAISA"
+        },
+        {"gltf": "Horno 4 (Sala Hidráulica, PLC&CCM)", "id": "Horno-4-(Sala-Hidrulica,-PLC&CCM)-CO-EFAISA"
+        },
+        {"gltf": "Horno 4 Sala PLC ", "id": "Horno-4-Sala--PLC--CO-EFAISA"
+        },
+        {"gltf": "Hornon 4 (Sala de Control y Sala Eléctrica)", "id": "Hornon-4-(Sala-de-Control-y-Sala-Elctrica)-CO-EFAISA"
+        },
+        {"gltf": "corte extincion en tuneles placher horno 4", "id": "corte-extincion-en-tuneles-placher-horno-4"
+        },
+        {"gltf": "Horno 5 (Cabina de Control)", "id": "Horno-5-(Cabina-de-Control)-CO-EFAISA"
+        },
+        {"gltf": "Horno 5 (Sala Hidráulica", "id": "Horno-5-(Sala-Hidrulica-CO-EFAISA"
+        },
+        {"gltf": "Horno 5 (Sala Tabbleros", "id": "Horno-5-(Sala-Tabbleros-CO-EFAISA"
+        },
+        {"gltf": "Horno 5 (Sala eléctrica Nº15)", "id": "Horno-5-(Sala-elctrica-N15)-CO-EFAISA"
+        },
+        {"gltf": "6 0400 3340 R0A cabina de aedi", "id": "6-0400-3340-R0A-cabina-de-aedi"
+        },
+        {"gltf": "6 1514 3126 R0A sHID", "id": "6-1514-3126-R0A-sHID"
+        },
+        {"gltf": "6 1514 3127 R0A PLC CCM", "id": "6-1514-3127-R0A-PLC-CCM"
+        },
+        {"gltf": "Horno 5 (Cabina eléctrica Nº1)", "id": "Horno-5-(Cabina-elctrica-N1)"
+        },
+        {"gltf": "Horno 5 (Consola Virtual)", "id": "Horno-5-(Consola-Virtual)"
+        },
+        {"gltf": "Horno 5 (Sala electrica +3.03, +8.00 y +8.52)", "id": "Horno-5-(Sala-electrica-+3.03,-+8.00-y-+8.52)"
+        },
+        {"gltf": "Horno 5 (Sala eléctrica +12.00,14.27, +18.25)", "id": "Horno-5-(Sala-elctrica-+12.00,-14.27,-+18.25)"
+        },
+        {"gltf": "Planta de cal (Sala eléctrica)", "id": "Planta-de-cal--(Sala-elctrica)-CO-EFAISA"
+        },
+        {"gltf": "REDI Edificio Control pa 2022", "id": "REDI-Edificio-Control-pa-2022"
+        },
+        {"gltf": "REDI Edificio Control pb 2022", "id": "REDI-Edificio-Control-pb-2022"
+        },
+        {"gltf": "REDI Edificio mantenimiento PB 2022", "id": "REDI-Edificio-mantenimiento-PB-2022"
+        },
+        {"gltf": "Sala Eléctrica Briqueteadora", "id": "Sala-Elctrica-Briqueteadora-CO-EFAISA"
+        },
+        {"gltf": "Sala de Control Briqueteadora", "id": "Sala-de-Control-Briqueteadora-CO-EFAISA"
+        },
+        {"gltf": "Sala Eléctrica Briqueteadora", "id": "Sala-Elctrica-Briqueteadora-CO-EFAISA"
+        },
+        {"gltf": "Sala de Control Briqueteadora", "id": "Sala-de-Control-Briqueteadora-CO-EFAISA"
+        },
+        {"gltf": "Grua Paceco.CO EFAISA", "id": "Grua-Paceco.CO-EFAISA"
+        },
+        {"gltf": "Planta de cal (Sala eléctrica)", "id": "Planta-de-cal--(Sala-elctrica)-CO-EFAISA"
+        },
+        {"gltf": "REDI Edificio Control 1º Piso ", "id": "REDI-Edificio-Control-1-Piso-"
+        },
+        {"gltf": "REDI Edificio Control ", "id": "REDI-Edificio-Control-"
+        },
+        {"gltf": "REDI Edificio Control Sala de Equipos y Vestuario ", "id": "REDI-Edificio-Control-Sala-de-Equipos-y-Vestuario-"
+        },
+        {"gltf": "REDI Edificio Control Sala de tableros y taller ", "id": "REDI-Edificio-Control-Sala-de-tableros-y-taller-"
+        },
+        {"gltf": "REDI Edificio mantenimiento 1P ", "id": "REDI-Edificio-mantenimiento-1P-"
+        },
+        {"gltf": "REDI Edificio mantenimiento PB ", "id": "REDI-Edificio-mantenimiento-PB-"
+        },
+        {"gltf": "CC2 Cabina de Comandos COL", "id": "CC2-Cabina-de-Comandos-C.O.EFAISA-PEPA-COL"
+        },
+        {"gltf": "CC2 Sala PLC", "id": "CC2-Sala-PLC-CO-EFIASA"
+        },
+        {"gltf": "Horno 5 (Entrepiso de cables)", "id": "Horno-5-(Entrepiso-de-cables)-CO-EFAISA"
+        },
+        {"gltf": "Planta de cal (Sala eléctrica)", "id": "Planta-de-cal--(Sala-elctrica)-CO-EFAISA"
+        },
+        {"gltf": "REDI Edificio Control pa 2022", "id": "REDI-Edificio-Control-pa-2022"
+        },
+        {"gltf": "REDI Edificio Control pb 2022", "id": "REDI-Edificio-Control-pb-2022"
+        },
+        {"gltf": "REDI Edificio mantenimiento PB 2022", "id": "REDI-Edificio-mantenimiento-PB-2022"
+        },
+        {"gltf": "Sala Eléctrica Briqueteadora", "id": "Sala-Elctrica-Briqueteadora-CO-EFAISA"
+        },
+        {"gltf": "Sala de Control Briqueteadora", "id": "Sala-de-Control-Briqueteadora-CO-EFAISA"
+        },
+        {"gltf": "Sub19 (Tableros)", "id": "Sub19-(Tableros)-CO-EFAISA"
+        },
+        {"gltf": "Tuneles de Cables ZONA 1", "id": "Tuneles-de-Cables-ZONA-1"
+        },
+        {"gltf": "Tuneles de Cables ZONA 10", "id": "Tuneles-de-Cables-ZONA-10"
+        },
+        {"gltf": "Tuneles de Cables ZONA 11", "id": "Tuneles-de-Cables-ZONA-11"
+        },
+        {"gltf": "Tuneles de Cables ZONA 12", "id": "Tuneles-de-Cables-ZONA-12"
+        },
+        {"gltf": "Tuneles de Cables ZONA 13", "id": "Tuneles-de-Cables-ZONA-13"
+        },
+        {"gltf": "Tuneles de Cables ZONA 14", "id": "Tuneles-de-Cables-ZONA-14"
+        },
+        {"gltf": "Tuneles de Cables ZONA 2", "id": "Tuneles-de-Cables-ZONA-2"
+        },
+        {"gltf": "Tuneles de Cables ZONA 3", "id": "Tuneles-de-Cables-ZONA-3"
+        },
+        {"gltf": "Tuneles de Cables ZONA 4", "id": "Tuneles-de-Cables-ZONA-4"
+        },
+        {"gltf": "Tuneles de Cables ZONA 5", "id": "Tuneles-de-Cables-ZONA-5"
+        },
+        {"gltf": "Tuneles de Cables ZONA 6", "id": "Tuneles-de-Cables-ZONA-6"
+        },
+        {"gltf": "Tuneles de Cables ZONA 7", "id": "Tuneles-de-Cables-ZONA-7"
+        },
+        {"gltf": "Tuneles de Cables ZONA 8", "id": "Tuneles-de-Cables-ZONA-8"
+        },
+        {"gltf": "Tuneles de Cables ZONA 9", "id": "Tuneles-de-Cables-ZONA-9"
+        },
+        {"gltf": "AVi Rojo", "id": "AVi-Rojo"
+        },
+        {"gltf": "Detector en Verde", "id": "Detector-en-Verde"
+        },
+        {"gltf": "Detector en amarillo", "id": "Detector-en-amarillo"
+        },
+        {"gltf": "Detector en rojo", "id": "Detector-en-rojo"
+        }
+    ]
+}

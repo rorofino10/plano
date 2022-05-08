@@ -1,8 +1,8 @@
 <div class="canvas-container">
     <canvas #renderCanvas class="renderCanvas"></canvas>
-    <div *ngIf="this.isOn" class="custombox">
+    <div class="custombox">
         <div class="custombox-start">
-            <button (click)="this.toggleComponentService.showMenu()">NEW</button>
+            <button routerLink="/start" >NEW</button>
             <!-- <a href="#" (click)="loadScene()">LOAD</a>
             <a href="#" (click)="saveScene('example', this.ccmeshes)">SAVE</a> -->
         </div>
@@ -15,7 +15,7 @@
             </button>
         </div>
     </div>
-    <div *ngIf="this.isOn" class="toolbox">
+    <div class="toolbox">
         <div class="toolbox-start">
             <!-- <a href="#" (click)="screenshot()">
                 <img src="./assets/screenshot.svg" alt="screenshot">

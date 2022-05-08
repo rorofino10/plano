@@ -2,7 +2,9 @@ import { Component, ElementRef, Input, OnInit, Output, ViewChild } from '@angula
 import { HttpClient } from '@angular/common/http';
 import { ViewerComponent } from '../viewer/viewer.component';
 import { ToggleComponentsService } from '../toggle-components.service';
-import list from './list.json'
+// import list from './list.json'
+// import list from './itemsList.json'
+import list from './items.json'
 import { start } from 'repl';
 @Component({
   selector: 'startscreen',
@@ -11,7 +13,7 @@ import { start } from 'repl';
 })
 export class StartscreenComponent implements OnInit {
   @Input() isOn: boolean = true
-  @Input() color: any
+  color: string | undefined
   public show = false
   public value: any
   public searchText!: string;
@@ -31,23 +33,15 @@ export class StartscreenComponent implements OnInit {
   // @ViewChild("label")
   // label!: ElementRef; 
   constructor(private http: HttpClient, public viewerComponent: ViewerComponent, public toggleComponentService: ToggleComponentsService) {
-    this.filtereditems = list.Planos.items.sort()
-    // this.http.get("./assets/list.json").subscribe(response => {
-    //   this.menu = response
-    // })
-    // this.http.get(this.url).subscribe(data => {
-    //   // Populating usersArray with names from API
-    //   data.json().forEach(element => {
-    //     this.usersArray.push(element.name);
-    //   });
-    // });
+    this.filtereditems = list.items.sort()
+    this.color = this.toggleComponentService.color
   }
   ngOnInit(): void {
-    this.toggleComponentService.onMenuChange.subscribe(val => {
-      this.isOn = true
-    })
+
+    // this.toggleComponentService.colorSwitch.subscribe(val => {
+    //   this.color = val
+    // })
     this.li = document.getElementsByTagName('li').length
-    this.math = Math
   }
   ngAfterViewInit(): void {
     // this.color = this.body.nativeElement.style.background
@@ -57,19 +51,14 @@ export class StartscreenComponent implements OnInit {
     const arr = (str != "") ? str.split(" ") : []
 
     if (arr.length>0) {
-      this.filtereditems = list.Planos.items.filter(item => {
+      this.filtereditems = list.items.filter(item => {
         if (arr.find((e: string) => item.gltf.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(" ", "").includes(e))){
           return true
         }
         else return false
       }).sort()
     }
-    else this.filtereditems = list.Planos.items
+    else this.filtereditems = list.items
   }
 
-
-  hide() {
-    this.isOn = false
-
-  }
 }

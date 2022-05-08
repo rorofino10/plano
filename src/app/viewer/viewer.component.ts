@@ -1,4 +1,5 @@
-import { Component, ElementRef, Input, NgZone, OnInit, ViewChild } from '@angular/core'
+import { AfterViewInit, Component, ElementRef, Input, NgZone, OnInit, ViewChild } from '@angular/core'
+import { ActivatedRoute, Router } from '@angular/router'
 import { Texture } from '@babylonjs/core'
 import { DynamicTexture } from '@babylonjs/core'
 import { SceneSerializer, Tools, Engine, Mesh, MeshBuilder, Scene, SceneLoader, Vector3, DebugLayer, DebugLayerTab, GizmoManager, ArcRotateCamera, Color3, HemisphericLight, StandardMaterial } from '@babylonjs/core'
@@ -14,7 +15,7 @@ import { ToolbarComponent } from '../toolbar/toolbar.component'
   templateUrl: './viewer.component.html',
   styleUrls: ['./viewer.component.css']
 })
-export class ViewerComponent implements OnInit {
+export class ViewerComponent implements OnInit, AfterViewInit {
   @Input()
   color!: string 
   private engine: Engine | undefined
@@ -50,26 +51,39 @@ export class ViewerComponent implements OnInit {
   @ViewChild('meshprop', { static: true }) meshprop!: ElementRef
   private showgrid: any = true
   private ground: Mesh | any
-  file: any
+  file: File | undefined
   modelo: any
-  constructor(public toggleComponentService: ToggleComponentsService) {
+  constructor(
+    public toggleComponentService: ToggleComponentsService, 
+    private route: ActivatedRoute
+    ) {
   }
 
+
   ngOnInit(): void {
-    this.toggleComponentService.model.subscribe( file => {
-      this.isOn = true
-      this.file = file
-      console.log('Hello')
-      this.startScene()
-      if (this.scene && this.color){
+
+    // this.toggleComponentService.model.subscribe( file => {
+    //   this.isOn = true
+    //   this.file = file
+    //   this.startScene()
+    //   if (this.scene && this.color){
+    //     this.scene.clearColor = Color3.FromHexString(this.color)
+    //   }
+    // })
+    // this.toggleComponentService.onMenuChange.subscribe( val => {
+    //   this.engine?.dispose()
+    //   this.scene?.dispose()
+    //   this.isOn = false
+    // })
+  }
+  ngAfterViewInit(): void {
+  
+    this.startScene(String(this.route.snapshot.paramMap.get('id')))
+    this.toggleComponentService.colorSwitch.subscribe(color => {
+      this.color = color
         this.scene.clearColor = Color3.FromHexString(this.color)
-      }
-    })
-    this.toggleComponentService.onMenuChange.subscribe( val => {
-      this.engine?.dispose()
-      this.scene?.dispose()
-      this.isOn = false
-    })
+    }
+    )
   }
   ngOnChanges(): void{
     if (this.scene){
@@ -77,8 +91,8 @@ export class ViewerComponent implements OnInit {
     }
   }
 
-  startScene() {
-    this.createEngine(this.file)
+  startScene(file: string | undefined) {
+    this.createEngine(file)
     this.addGround()
     this.addLight()
     this.addCamera()
@@ -90,7 +104,7 @@ export class ViewerComponent implements OnInit {
     this.engine = new Engine(this.renderCanvas.nativeElement, true)
 
     this.scene = new Scene(this.engine)
-    this.scene.clearColor = new Color3(1, 1, 1)
+    this.scene.clearColor = Color3.FromHexString(this.toggleComponentService.color)
 
     this.scene.onPointerDown = function (evt: any, evtdata: any) {
       console.log(this.mesh)
