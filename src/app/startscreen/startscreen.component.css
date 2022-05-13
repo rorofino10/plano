@@ -44,6 +44,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 input {
     grid-row: 1;
+    height: 35px;
     -webkit-appearance: none;
     position: relative;
     width: 200px;
@@ -57,10 +58,10 @@ input {
     padding-left: 1rem;
 }
 input:hover {
-    width: 500px;
+    width: 20vw;
 }
 input:focus{
-    width: 500px;
+    width: 20vw;
 
     outline: none;
     border-bottom: 1px solid #8cb0d4;

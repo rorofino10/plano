@@ -34,17 +34,8 @@ export class StartscreenComponent implements OnInit {
   // label!: ElementRef; 
   constructor(private http: HttpClient, public viewerComponent: ViewerComponent, public toggleComponentService: ToggleComponentsService) {
     this.filtereditems = list.items.sort()
-    this.color = this.toggleComponentService.color
   }
   ngOnInit(): void {
-
-    // this.toggleComponentService.colorSwitch.subscribe(val => {
-    //   this.color = val
-    // })
-    this.li = document.getElementsByTagName('li').length
-  }
-  ngAfterViewInit(): void {
-    // this.color = this.body.nativeElement.style.background
   }
   onSearchChange() {
     const str = this.searchText.toLowerCase()

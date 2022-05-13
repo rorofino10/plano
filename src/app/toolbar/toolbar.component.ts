@@ -9,7 +9,6 @@ import { ToggleComponentsService } from '../toggle-components.service';
 
 
 export class ToolbarComponent{
-  @Output() bgcolor = new EventEmitter<any>()
   public color: string = "#858383"
 
   constructor (public toggleComponent:ToggleComponentsService){

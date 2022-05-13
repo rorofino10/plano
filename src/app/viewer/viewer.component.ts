@@ -1,15 +1,11 @@
-import { AfterViewInit, Component, ElementRef, Input, NgZone, OnInit, ViewChild } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
+import { AfterViewInit, Component, ElementRef, Input,OnInit, ViewChild } from '@angular/core'
+import { ActivatedRoute, ParamMap } from '@angular/router'
+import { Observable, switchMap } from 'rxjs'
 import { Texture } from '@babylonjs/core'
-import { DynamicTexture } from '@babylonjs/core'
 import { SceneSerializer, Tools, Engine, Mesh, MeshBuilder, Scene, SceneLoader, Vector3, DebugLayer, DebugLayerTab, GizmoManager, ArcRotateCamera, Color3, HemisphericLight, StandardMaterial } from '@babylonjs/core'
-// import * as BABYLON from '@babylonjs/core';
-// (window as any).BABYLON = BABYLON;
 import "@babylonjs/inspector"
-import { CustomMaterial, GridMaterial } from "@babylonjs/materials"
+import { GridMaterial } from "@babylonjs/materials"
 import { ToggleComponentsService } from '../toggle-components.service'
-import { ToolbarComponent } from '../toolbar/toolbar.component'
-// import {MeshWriter} from 'meshwriter'
 @Component({
   selector: 'app-viewer',
   templateUrl: './viewer.component.html',
@@ -53,6 +49,7 @@ export class ViewerComponent implements OnInit, AfterViewInit {
   private ground: Mesh | any
   file: File | undefined
   modelo: any
+  plano: ParamMap | undefined
   constructor(
     public toggleComponentService: ToggleComponentsService, 
     private route: ActivatedRoute
@@ -77,8 +74,7 @@ export class ViewerComponent implements OnInit, AfterViewInit {
     // })
   }
   ngAfterViewInit(): void {
-  
-    this.startScene(String(this.route.snapshot.paramMap.get('id')))
+    this.startScene(String(this.route.snapshot.paramMap.get('name')))
     this.toggleComponentService.colorSwitch.subscribe(color => {
       this.color = color
         this.scene.clearColor = Color3.FromHexString(this.color)

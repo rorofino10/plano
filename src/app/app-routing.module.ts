@@ -4,9 +4,9 @@ import { StartscreenComponent } from './startscreen/startscreen.component';
 import { ViewerComponent } from './viewer/viewer.component'
 
 const routes: Routes = [
-  {path: '', redirectTo: "/start", pathMatch: 'full'},
-  { path: 'start', component: StartscreenComponent},
-  { path: 'plano/:id', component: ViewerComponent}
+  { path: '', redirectTo: "/list", pathMatch: 'full'},
+  { path: 'list', component: StartscreenComponent},
+  { path: ':name', component: ViewerComponent }
 ];
 
 @NgModule({

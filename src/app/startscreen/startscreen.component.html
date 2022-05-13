@@ -1,11 +1,9 @@
-<!-- <input type="text" #search>
-<label for=""> {{ this.search.value}} </label> -->
 <div *ngIf="this.isOn" class="start" #start [ngStyle]="{'background-color': toggleComponentService.color }">
     <div class="wrapper">
         <input type="search" [(ngModel)]="searchText" (ngModelChange)="onSearchChange()" placeholder="Search Text">
         <ul class="list">
             <li class="item" *ngFor=" let item of filtereditems" >
-                <button routerLink="/plano/{{ item.id }}" class="btnitem" [ngStyle]="{'background-color': toggleComponentService.color}">{{ item.gltf }}</button>
+                <button [routerLink]="['/', item.id]" class="btnitem" [ngStyle]="{'background-color': toggleComponentService.color}">{{ item.gltf }}</button>
             </li>
             <h1 *ngIf="filtereditems.length === 0">Sin Resultados</h1>
         </ul>
