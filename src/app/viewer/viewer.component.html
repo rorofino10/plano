@@ -39,13 +39,13 @@
       <button (click)="toggleGroundMaterial()">
         <img src="./assets/grid.svg" alt="grid" />
       </button>
-      <button href="#" (click)="setDefaultView()">
+      <button (click)="setDefaultView()">
         <img src="./assets/defcam.svg" alt="camera" />
       </button>
-      <button href="#" (click)="zoomIn()">
+      <button (click)="zoomIn()">
         <img src="./assets/zoominf.svg" alt="zoomIn" />
       </button>
-      <button href="#" (click)="zoomOut()">
+      <button (click)="zoomOut()">
         <img src="./assets/zoomoutf.svg" alt="zoomIn" />
       </button>
     </div>
@@ -58,13 +58,13 @@
       <img src="./assets/axe.png" alt="axepng" />
     </button>
   </div>
-  <div *ngIf="this.selectedMesh && this.isOn" class="camerabar">
+  <div *ngIf="this.selectedMesh" class="camerabar">
     <div class="camerabar-top">
       <div class="gizmo">
         <button (click)="moveGizmo()">
           <img src="./assets/move.svg" alt="move" />
         </button>
-        <a href="#">
+        <a>
           <input
             type="number"
             class="propertiesInput"
@@ -75,7 +75,7 @@
             max="25"
           />
         </a>
-        <a href="#">
+        <a>
           <input
             type="number"
             class="propertiesInput"
@@ -86,7 +86,7 @@
             max="25"
           />
         </a>
-        <a href="#">
+        <a>
           <input
             type="number"
             class="propertiesInput"
@@ -99,10 +99,10 @@
         </a>
       </div>
       <div class="gizmo">
-        <a href="#">
+        <a>
           <img src="./assets/scale.svg" alt="scale" />
         </a>
-        <a href="#">
+        <a>
           <input
             type="number"
             class="propertiesInput"
