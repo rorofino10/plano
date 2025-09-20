@@ -1,102 +1,128 @@
 <div class="canvas-container">
-    <canvas #renderCanvas class="renderCanvas"></canvas>
-    <div class="custombox">
-        <div class="custombox-start">
-            <button routerLink="/list" >NEW</button>
-            <!-- <a href="#" (click)="loadScene()">LOAD</a>
+  <canvas #renderCanvas class="renderCanvas"></canvas>
+  <div class="custombox">
+    <div class="custombox-start">
+      <button routerLink="/list">NEW</button>
+      <!-- <a href="#" (click)="loadScene()">LOAD</a>
             <a href="#" (click)="saveScene('example', this.ccmeshes)">SAVE</a> -->
-        </div>
-        <div class="custombox-end">
-            <button>
-                <img src="./assets/configicon.svg" alt="config">
-            </button>
-            <button (click)="openFullscreen()">
-                <img src="./assets/fullscreen.svg" alt="fullscreen">
-            </button>
-        </div>
     </div>
-    <div class="toolbox">
-        <div class="toolbox-start">
-            <!-- <a href="#" (click)="screenshot()">
-                <img src="./assets/screenshot.svg" alt="screenshot">
-            </a>
-            <a href="#" (click)="toggleInspector()">
-                <img src="./assets/debug.svg" alt="debug">
-            </a> -->
-        </div>
-        <!-- <div class="toolbox-mid">
-            <a href="#" (click)="showAsset()">
-                <img src="./assets/asset.svg" alt="asset">
-            </a>
-        </div> -->
-        <div class="toolbox-end">
-            <!-- <a href="#">
+    <div class="custombox-end">
+      <button>
+        <img src="./assets/configicon.svg" alt="config" />
+      </button>
+      <button (click)="openFullscreen()">
+        <img src="./assets/fullscreen.svg" alt="fullscreen" />
+      </button>
+    </div>
+  </div>
+  <div class="toolbox">
+    <div class="toolbox-start">
+      <button (click)="screenshot()">
+        <img src="./assets/screenshot.svg" alt="screenshot" />
+      </button>
+      <button (click)="toggleInspector()">
+        <img src="./assets/debug.svg" alt="debug" />
+      </button>
+    </div>
+    <div class="toolbox-mid">
+      <button (click)="showAsset()">
+        <img src="./assets/asset.svg" alt="asset" />
+      </button>
+    </div>
+    <div class="toolbox-end">
+      <!-- <a href="#">
                 <img src="./assets/export.svg" alt="export">
             </a> -->
-            <!-- <a href="#" (click)="toggleWireframe()">
+      <!-- <a href="#" (click)="toggleWireframe()">
                 <img src="./assets/wireframe.svg" alt="wireframe">
             </a> -->
-            <button (click)="toggleGroundMaterial()">
-                <img src="./assets/grid.svg" alt="grid">
-            </button>
-            <button href="#" (click)="setDefaultView()">
-                <img src="./assets/defcam.svg" alt="camera">
-            </button>
-            <button href="#" (click)="zoomIn()">
-                <img src="./assets/zoominf.svg" alt="zoomIn">
-            </button>
-            <button href="#" (click)="zoomOut()">
-                <img src="./assets/zoomoutf.svg" alt="zoomIn">
-            </button>
-        </div>
+      <button (click)="toggleGroundMaterial()">
+        <img src="./assets/grid.svg" alt="grid" />
+      </button>
+      <button href="#" (click)="setDefaultView()">
+        <img src="./assets/defcam.svg" alt="camera" />
+      </button>
+      <button href="#" (click)="zoomIn()">
+        <img src="./assets/zoominf.svg" alt="zoomIn" />
+      </button>
+      <button href="#" (click)="zoomOut()">
+        <img src="./assets/zoomoutf.svg" alt="zoomIn" />
+      </button>
     </div>
-    <div *ngIf="this.assetshow && this.isOn" class="assetbar">
-        <a href="#" (click)="importMesh('extintor.gltf')">
-            <img src="./assets/extintor.png" alt="extintorpng">
+  </div>
+  <div *ngIf="this.assetshow" class="assetbar">
+    <button (click)="importMesh('extintor.gltf')">
+      <img src="./assets/extintor.png" alt="extintorpng" />
+    </button>
+    <button (click)="importMesh('axe.gltf')">
+      <img src="./assets/axe.png" alt="axepng" />
+    </button>
+  </div>
+  <div *ngIf="this.selectedMesh && this.isOn" class="camerabar">
+    <div class="camerabar-top">
+      <div class="gizmo">
+        <button (click)="moveGizmo()">
+          <img src="./assets/move.svg" alt="move" />
+        </button>
+        <a href="#">
+          <input
+            type="number"
+            class="propertiesInput"
+            [(ngModel)]="this.selectedMeshpositionx"
+            #ctrl="ngModel"
+            (ngModelChange)="updateMeshPosition()"
+            min="-25"
+            max="25"
+          />
         </a>
-        <a href="#" (click)="importMesh('axe.gltf')">
-            <img src="./assets/axe.png" alt="axepng">
+        <a href="#">
+          <input
+            type="number"
+            class="propertiesInput"
+            [(ngModel)]="this.selectedMeshpositiony"
+            #ctrl="ngModel"
+            (ngModelChange)="updateMeshPosition()"
+            min="-25"
+            max="25"
+          />
         </a>
+        <a href="#">
+          <input
+            type="number"
+            class="propertiesInput"
+            [(ngModel)]="this.selectedMeshpositionz"
+            #ctrl="ngModel"
+            (ngModelChange)="updateMeshPosition()"
+            min="-25"
+            max="25"
+          />
+        </a>
+      </div>
+      <div class="gizmo">
+        <a href="#">
+          <img src="./assets/scale.svg" alt="scale" />
+        </a>
+        <a href="#">
+          <input
+            type="number"
+            class="propertiesInput"
+            [(ngModel)]="this.selectedMeshscale"
+            #ctrl="ngModel"
+            (ngModelChange)="updateMeshPosition()"
+            min="0"
+            max="300"
+            maxlength="3"
+            step="10"
+          />
+        </a>
+      </div>
     </div>
-   <div *ngIf="this.selectedMesh && this.isOn" class="camerabar">
-        <div class="camerabar-top">
-            <div class="gizmo">
-                <a href="#" (click)="moveGizmo()">
-                    <img src="./assets/move.svg" alt="move">
-                </a>
-                <a href="#">
-                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshpositionx"
-                        #ctrl="ngModel" (ngModelChange)="updateMeshPosition()" min="-25" max="25">
-                </a>
-                <a href="#">
-                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshpositiony"
-                        #ctrl="ngModel" (ngModelChange)="updateMeshPosition()" min="-25" max="25">
-                </a>
-                <a href="#">
-                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshpositionz"
-                        #ctrl="ngModel" (ngModelChange)="updateMeshPosition()" min="-25" max="25">
-                </a>
-            </div>
-            <div class="gizmo">
-                <a href="#">
-                    <img src="./assets/scale.svg" alt="scale">
-                </a>
-                <a href="#">
-                    <input type="number" class="propertiesInput" [(ngModel)]="this.selectedMeshscale" #ctrl="ngModel"
-                        (ngModelChange)="updateMeshPosition()" min="0" max="300" maxlength="3" step="10">
-                </a>
-            </div>
-        </div>
-        <div class="camerabar-mid">
-
-        </div>
-        <div class="camerabar-bot">
-            <a href="#" (click)="deleteMesh()">
-                <img src="./assets/delete.svg" alt="delete">
-            </a>
-        </div>
-
-    </div> -->
-
-
+    <div class="camerabar-mid"></div>
+    <div class="camerabar-bot">
+      <button (click)="deleteMesh()">
+        <img src="./assets/delete.svg" alt="delete" />
+      </button>
+    </div>
+  </div>
+  -->
 </div>
